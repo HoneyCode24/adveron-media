@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Hero.css";
 import logo from "../assets/logo.png";
 const Hero = () => {
   const heroRef = useRef(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -43,25 +44,40 @@ const Hero = () => {
           </span>
         </div>
 
-        <ul className="hero__nav-links">
+        <ul className={`hero__nav-links ${menuOpen ? "hero__nav-links--open" : ""}`}>
           <li>
-            <a href="#services">Services</a>
+            <a href="#services" onClick={() => setMenuOpen(false)}>
+              Services
+            </a>
           </li>
           <li>
-            <a href="#results">Results</a>
+            <a href="#results" onClick={() => setMenuOpen(false)}>
+              Results
+            </a>
           </li>
           <li>
-            <a href="#about">About</a>
+            <a href="#about" onClick={() => setMenuOpen(false)}>
+              About
+            </a>
           </li>
           <li>
-            <a href="#contact" className="hero__nav-cta">
+            <a
+              href="#contact"
+              className="hero__nav-cta"
+              onClick={() => setMenuOpen(false)}
+            >
               Get Started
             </a>
           </li>
         </ul>
 
         {/* Mobile hamburger */}
-        <button className="hero__hamburger" aria-label="Open menu">
+        <button
+          className="hero__hamburger"
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((current) => !current)}
+        >
           <span />
           <span />
           <span />

@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import useScrollReveal from "../hooks/useScrollReveal";
 import "./Services.css";
 
 const services = [
@@ -66,32 +67,11 @@ const services = [
 ];
 
 export default function Services() {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const cards = sectionRef.current?.querySelectorAll(".service-card");
-
-    if (!cards?.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-        rootMargin: "0px 0px -80px 0px",
-      }
-    );
-
-    cards.forEach((card) => observer.observe(card));
-
-    return () => observer.disconnect();
-  }, []);
+  const sectionRef = useScrollReveal({
+    selector: ".reveal",
+    threshold: 0.2,
+    rootMargin: "0px 0px -80px 0px",
+  });
 
   return (
     <section className="services-section" ref={sectionRef}>
@@ -118,7 +98,7 @@ export default function Services() {
         <div className="services-grid">
           {services.map((service, index) => (
             <article
-              className="service-card"
+              className="service-card reveal"
               key={service.title}
               style={{ "--delay": `${index * 140}ms` }}
             >

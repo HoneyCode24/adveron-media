@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import useScrollReveal from "../hooks/useScrollReveal";
 import "./Contact.css";
 
 const initialFormState = {
@@ -115,40 +116,13 @@ function SocialIcon({ type }) {
 }
 
 export default function Contact() {
-  const sectionRef = useRef(null);
+  const sectionRef = useScrollReveal({
+    selector: ".reveal",
+    threshold: 0.18,
+    rootMargin: "0px 0px -80px 0px",
+  });
   const [formData, setFormData] = useState(initialFormState);
   const [submitted, setSubmitted] = useState(false);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-
-    if (!section) return;
-
-    const revealElements = section.querySelectorAll(".contact-reveal");
-
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        });
-      },
-      {
-        threshold: 0.18,
-        rootMargin: "0px 0px -80px 0px",
-      }
-    );
-
-    revealElements.forEach((element) => {
-      revealObserver.observe(element);
-    });
-
-    return () => {
-      revealObserver.disconnect();
-    };
-  }, []);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -171,18 +145,18 @@ export default function Contact() {
         <div className="cta-grid-overlay" />
 
         <div className="cta-content">
-          <span className="contact-badge contact-reveal">Let's Build Together</span>
+          <span className="contact-badge reveal reveal--delay-1">Let's Build Together</span>
 
-          <h2 className="contact-reveal">
+          <h2 className="reveal reveal--delay-2">
             Ready to <span>Grow</span> Your Business Online?
           </h2>
 
-          <p className="contact-reveal">
+          <p className="reveal reveal--delay-3">
             Book a free strategy call. No pressure, no jargon — just clarity on
             what will actually work for your business.
           </p>
 
-          <div className="cta-actions contact-reveal cta-buttons-reveal">
+          <div className="cta-actions reveal reveal--delay-4">
             <a href="#contact-form" className="cta-button cta-button-primary">
               <PhoneIcon />
               Book a Free Call
@@ -203,7 +177,7 @@ export default function Contact() {
 
       {/* Block 2 — Contact Form */}
       <div className="contact-container">
-        <div className="contact-form-card contact-reveal" id="contact-form">
+        <div className="contact-form-card reveal reveal--delay-5" id="contact-form">
           {!submitted ? (
             <>
               <div className="form-card-heading">
@@ -301,7 +275,7 @@ export default function Contact() {
         <div className="contact-info-strip">
           {contactItems.map((item, index) => (
             <div
-              className="contact-info-item contact-reveal"
+              className="contact-info-item reveal"
               key={item.label}
               style={{ transitionDelay: `${index * 100}ms` }}
             >

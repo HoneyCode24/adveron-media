@@ -505,6 +505,31 @@
     display: none;
   }
 
+  .hero__nav-links--open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 24px;
+    left: 24px;
+    z-index: 15;
+    gap: 16px;
+    padding: 22px 20px;
+    background: rgba(7, 12, 22, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.35);
+  }
+
+  .hero__nav-links--open li {
+    width: 100%;
+  }
+
+  .hero__nav-links--open li a {
+    display: block;
+    padding: 12px 0;
+  }
+
   .hero__hamburger {
     display: flex;
   }

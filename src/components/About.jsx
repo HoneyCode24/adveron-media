@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import useScrollReveal from "../hooks/useScrollReveal";
 import "./About.css";
 
 const reasons = [
@@ -112,45 +113,18 @@ function Sparkline() {
 }
 
 export default function About() {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-
-    if (!section) return;
-
-    const revealElements = section.querySelectorAll(".about-reveal");
-
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        });
-      },
-      {
-        threshold: 0.18,
-        rootMargin: "0px 0px -80px 0px",
-      }
-    );
-
-    revealElements.forEach((element) => {
-      revealObserver.observe(element);
-    });
-
-    return () => {
-      revealObserver.disconnect();
-    };
-  }, []);
+  const sectionRef = useScrollReveal({
+    selector: ".reveal",
+    threshold: 0.18,
+    rootMargin: "0px 0px -80px 0px",
+  });
 
   return (
     <section className="about-section" ref={sectionRef}>
       <div className="about-container">
         {/* Block 1 — About Adveron Media */}
         <div className="about-split">
-          <div className="about-content about-reveal reveal-from-left">
+          <div className="about-content reveal reveal--left">
             <span className="about-badge">Who We Are</span>
 
             <h2>
@@ -189,7 +163,7 @@ export default function About() {
             </a>
           </div>
 
-          <div className="about-visual about-reveal reveal-from-right">
+          <div className="about-visual reveal reveal--right">
             <div className="about-glow" />
 
             <article className="visual-card visual-card-back">
@@ -218,7 +192,7 @@ export default function About() {
 
         {/* Block 2 — Why Us */}
         <div className="why-block">
-          <div className="why-header about-reveal">
+          <div className="why-header reveal">
             <span className="about-badge">Why Adveron Media</span>
 
             <h2>
@@ -234,7 +208,7 @@ export default function About() {
           <div className="why-grid">
             {reasons.map((reason, index) => (
               <article
-                className="why-card about-reveal"
+                className="why-card reveal"
                 key={reason.title}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >

@@ -1,8 +1,95 @@
-/* :root {
-  --clr-bg: #080c12;
-  --clr-blue: #2563eb;
-  --clr-blue-lt: #3b82f6;
-  --clr-text: #f0f4ff;
-  --clr-text-muted: #8fa3c0;
-  --clr-border: rgba(143, 163, 192, 0.16);
-} */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* accounts for fixed navbar height */
+}
+
+* {
+  -webkit-overflow-scrolling: touch; /* critical for iOS momentum scroll */
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.hero__orb,
+.hero__pill,
+.service-card,
+.pricing-card {
+  will-change: transform;
+  transform: translateZ(0); /* forces GPU compositing layer */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Remove will-change after animation completes to free memory */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+  will-change: auto;
+}
+
+.reveal--delay-1 {
+  transition-delay: 120ms;
+}
+
+.reveal--delay-2 {
+  transition-delay: 220ms;
+}
+
+.reveal--delay-3 {
+  transition-delay: 320ms;
+}
+
+.reveal--delay-4 {
+  transition-delay: 420ms;
+}
+
+.reveal--left {
+  transform: translateX(-24px);
+}
+
+.reveal--right {
+  transform: translateX(24px);
+}
+
+/* Directional variants need opacity too */
+.reveal--left,
+.reveal--right {
+  opacity: 0;
+  transition:
+    opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+.reveal--left.reveal--visible,
+.reveal--right.reveal--visible {
+  opacity: 1;
+  transform: translateX(0);
+  will-change: auto;
+}
+
+/* Scale variant for cards */
+.reveal--scale {
+  opacity: 0;
+  transform: scale(0.94);
+  transition:
+    opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+.reveal--scale.reveal--visible {
+  opacity: 1;
+  transform: scale(1);
+  will-change: auto;
+}
