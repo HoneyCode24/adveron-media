@@ -698,11 +698,11 @@
 
 .contact-info-item {
   flex: 1;
-  max-width: 260px;        /* stops items from stretching too wide */
+  max-width: 340px;        /* stops items from stretching too wide */
   position: relative;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   padding: 28px 26px;
   transition: background 0.25s ease;
 }
