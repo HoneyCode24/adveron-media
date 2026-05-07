@@ -331,7 +331,7 @@ export default function SocialProof() {
       </div> */}
 
       {/* Block 4 — Trust Badges */}
-      <div className="social-proof-container">
+      {/* <div className="social-proof-container">
         <div className="trust-badges-grid">
           {trustBadges.map((badge, index) => (
             <article
@@ -350,7 +350,7 @@ export default function SocialProof() {
             </article>
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

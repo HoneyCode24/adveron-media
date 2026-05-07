@@ -159,35 +159,60 @@ export default function About() {
             </div>
 
             <a href="#contact" className="about-link">
-              Book a Free Strategy Call →<span>→</span>
+              Book a Free Strategy Call<span>→</span>
             </a>
           </div>
 
           <div className="about-visual reveal reveal--right">
-            <div className="about-glow" />
+  <div className="about-glow" />
 
-            <article className="visual-card visual-card-back">
-              <div className="visual-card-top">
-                <div>
-                  <span>Campaign Performance</span>
-                  <h4>ROAS This Month</h4>
-                </div>
+  {/* BACK CARD: How We Work */}
+  <article className="visual-card visual-card-back">
+    <div className="visual-card-top">
+      <div>
+        <span>How We Work</span>
+        <h4>Built on Clarity, Not Hype</h4>
+      </div>
+      <span className="growth-badge badge-blue">100% Transparent</span>
+    </div>
 
-                <span className="growth-badge">+38%</span>
-              </div>
+    <ul className="process-list">
+      <li>
+        <span className="check-dot" />
+        <span><strong>Strategy first</strong> — every decision backed by audience data</span>
+      </li>
+      <li>
+        <span className="check-dot" />
+        <span><strong>Creatives that convert</strong> — not just ones that look good</span>
+      </li>
+      <li>
+        <span className="check-dot" />
+        <span><strong>Weekly reports</strong> — you always know where your money goes</span>
+      </li>
+      <li>
+        <span className="check-dot" />
+        <span><strong>No lock-in</strong> — we earn your business every month</span>
+      </li>
+    </ul>
+  </article>
 
-              <CampaignBars />
-            </article>
-
-            <article className="visual-card visual-card-front">
-              <div className="visual-card-label">Client Growth With</div>
-
-              <h3>Adveron Media Creative System</h3>
-              {/* <p>Generated This Quarter</p> */}
-
-              <Sparkline />
-            </article>
-          </div>
+  {/* FRONT CARD: Growth */}
+  <article className="visual-card visual-card-front">
+    <div className="visual-card-label">Built for Indian Businesses</div>
+    <h3>Real Growth.<br />No Fluff.</h3>
+    <p className="card-tagline">
+      We tie our work to outcomes — leads, sales, and visibility — not vanity metrics.
+    </p>
+    <div className="pill-row">
+      {["Meta Ads", "Google Ads", "Content", "SEO"].map((s) => (
+        <span key={s} className="service-pill">{s}</span>
+      ))}
+    </div>
+    <div className="card-divider" />
+    <p className="sparkline-label">Typical client journey →</p>
+    <Sparkline />
+  </article>
+</div>
         </div>
 
         {/* Block 2 — Why Us */}
