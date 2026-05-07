@@ -166,11 +166,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator
-      <div className="hero__scroll">
-        <div className="hero__scroll-line" />
-        <span>Scroll</span>
-      </div> */}
+      
     </section>
   );
 };
