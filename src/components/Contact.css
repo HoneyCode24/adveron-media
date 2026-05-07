@@ -683,20 +683,22 @@
 }
 
 /* ── Contact Info Strip ── */
+
 .contact-info-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: min(760px, 100%);
+  display: flex;
+  justify-content: center;
+  width: min(560px, 100%);   /* narrower — fits 2 items snugly */
   margin: 48px auto 0;
   border: 1px solid var(--clr-border);
   border-radius: 20px;
   background: rgba(10, 14, 26, 0.7);
   backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   overflow: hidden;
 }
 
 .contact-info-item {
+  flex: 1;
+  max-width: 260px;        /* stops items from stretching too wide */
   position: relative;
   display: flex;
   align-items: center;
@@ -704,7 +706,6 @@
   padding: 28px 26px;
   transition: background 0.25s ease;
 }
-
 .contact-info-item:hover {
   background: rgba(37, 99, 235, 0.04);
 }
