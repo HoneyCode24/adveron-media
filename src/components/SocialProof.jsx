@@ -76,9 +76,10 @@ const trustBadges = [
 function CountUpStat({ stat, shouldStart }) {
   const [count, setCount] = useState(0);
   const hasAnimated = useRef(false);
+  const isNumeric = typeof stat.value === "number";
 
   useEffect(() => {
-    if (!shouldStart || hasAnimated.current) return;
+    if (!shouldStart || hasAnimated.current || !isNumeric) return;
 
     hasAnimated.current = true;
 
@@ -103,15 +104,15 @@ function CountUpStat({ stat, shouldStart }) {
     };
 
     requestAnimationFrame(animate);
-  }, [shouldStart, stat]);
+  }, [shouldStart, stat, isNumeric]);
+
+  const displayValue = isNumeric
+    ? `${stat.prefix || ""}${count.toLocaleString("en-IN")}${stat.suffix || ""}`
+    : stat.value;
 
   return (
     <div className="social-proof-stat reveal-item">
-      <h3>
-        {stat.prefix || ""}
-        {count.toLocaleString("en-IN")}
-        {stat.suffix || ""}
-      </h3>
+      <h3>{displayValue}</h3>
       <p>{stat.label}</p>
     </div>
   );
