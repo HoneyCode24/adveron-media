@@ -3,26 +3,28 @@ import "./SocialProof.css";
 
 const stats = [
   {
-    value: "Demo-First Approach",
-    // suffix: "+",
-    label: "See Your Ad Before Paying",
+    icon: "demo",
+    value: ["Demo-First", " Approach"],
+    highlight: 0,
+    label: "See your ad before paying anything",
   },
   {
-    value: "AI UGC Ad Creatives",
-    // prefix: "₹",
-    // suffix: "Cr+",
-    label: "Built For Meta Ads",
+    icon: "ai",
+    value: ["AI UGC", " Ad Creatives"],
+    highlight: 0,
+    label: "Built and optimised for Meta Ads",
   },
   {
-    value: "Landing Page Support",
-    // suffix: "x",
-    label: "Website + Funnel Ready",
-    // decimals: 1,
+    icon: "landing",
+    value: ["Landing Page", " Support"],
+    highlight: 0,
+    label: "Website + full funnel ready",
   },
   {
-    value: "48-Hour Onboarding",
-    // suffix: "%",
-    label: "Fast Start After Approval",
+    icon: "onboarding",
+    value: ["48-Hour", " Onboarding"],
+    highlight: 0,
+    label: "Fast start after approval",
   },
 ];
 
@@ -72,6 +74,32 @@ const trustBadges = [
     desc: "Stay because results make sense, not because paperwork says so.",
   },
 ];
+
+function StatIcon({ type }) {
+  if (type === "demo") return (
+    <svg viewBox="0 0 24 24">
+      <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
+    </svg>
+  );
+  if (type === "ai") return (
+    <svg viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="4" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  );
+  if (type === "landing") return (
+    <svg viewBox="0 0 24 24">
+      <rect x="2" y="3" width="20" height="14" rx="3" />
+      <path d="M8 21h8M12 17v4" />
+    </svg>
+  );
+  return (
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 3" />
+    </svg>
+  );
+}
 
 function CountUpStat({ stat, shouldStart }) {
   const [count, setCount] = useState(0);
@@ -201,14 +229,62 @@ export default function SocialProof() {
       {/* Block 1 — Stats Bar */}
       <div className="social-proof-stats-bar" ref={statsRef}>
         <div className="social-proof-stats-grid">
-          {stats.map((stat, index) => (
-            <CountUpStat
-              key={stat.label}
-              stat={stat}
-              shouldStart={startCount}
-              style={{ transitionDelay: `${index * 150}ms` }}
-            />
-          ))}
+
+          {/* Stat 1 */}
+          <div className="social-proof-stat">
+            <div className="social-proof-stat__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
+              </svg>
+            </div>
+            <div className="social-proof-stat__text">
+              <h3><em>Demo-First</em> Approach</h3>
+              <p>See your ad before paying anything</p>
+            </div>
+          </div>
+
+          {/* Stat 2 */}
+          <div className="social-proof-stat">
+            <div className="social-proof-stat__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="4" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <div className="social-proof-stat__text">
+              <h3>AI UGC <em>Ad Creatives</em></h3>
+              <p>Built and optimised for Meta Ads</p>
+            </div>
+          </div>
+
+          {/* Stat 3 */}
+          <div className="social-proof-stat">
+            <div className="social-proof-stat__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="3" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </div>
+            <div className="social-proof-stat__text">
+              <h3>Landing Page <em>Support</em></h3>
+              <p>Website + full funnel ready</p>
+            </div>
+          </div>
+
+          {/* Stat 4 */}
+          <div className="social-proof-stat">
+            <div className="social-proof-stat__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 3" />
+              </svg>
+            </div>
+            <div className="social-proof-stat__text">
+              <h3><em>48-Hour</em> Onboarding</h3>
+              <p>Fast start after approval</p>
+            </div>
+          </div>
+
         </div>
       </div>
 

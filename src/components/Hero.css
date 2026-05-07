@@ -363,53 +363,193 @@
 }
 
 /* Stats */
+
+
 .hero__stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  width: min(100%, 900px);
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: min(100%, 860px);
   margin: 0 auto;
-  padding: 22px;
-  background: rgba(15, 24, 40, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
-  backdrop-filter: blur(14px);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 20px;
+  background: rgba(8, 12, 24, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
   animation: fadeIn 1s 1.1s ease both;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 24px 64px rgba(0, 0, 0, 0.35),
+    0 0 60px rgba(37, 99, 235, 0.07);
+  position: relative;
+}
+
+/* Top glow line across the whole bar */
+.hero__stats::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(37, 99, 235, 0.5),
+    rgba(59, 130, 246, 0.7),
+    rgba(37, 99, 235, 0.5),
+    transparent
+  );
+  z-index: 1;
 }
 
 .hero__stat {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 6px;
+  padding: 24px 28px;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.hero__stat:hover {
+  background: rgba(37, 99, 235, 0.05);
+}
+
+/* Icon accent top-left */
+.hero__stat::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 0;
+  width: 3px;
+  height: 32px;
+  border-radius: 0 3px 3px 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(59, 130, 246, 0.8),
+    rgba(37, 99, 235, 0.3)
+  );
+}
+
+.hero__stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.hero__stat-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #3b82f6;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px rgba(37, 99, 235, 0.5));
 }
 
 .hero__stat-number {
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--clr-text);
   letter-spacing: -0.02em;
-  line-height: 1.4;
-  text-transform: none;
+  line-height: 1.3;
+}
+
+/* Blue highlight on key words */
+.hero__stat-number em {
+  font-style: normal;
+  color: #3b82f6;
 }
 
 .hero__stat-label {
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 0.75rem;
   color: var(--clr-text-muted);
   font-weight: 400;
-  line-height: 1.6;
-  letter-spacing: 0;
-  text-transform: none;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
 }
 
+/* Vertical divider between stats */
 .hero__stat-divider {
-  display: none;
+  display: block;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.08) 30%,
+    rgba(255, 255, 255, 0.08) 70%,
+    transparent
+  );
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+  .hero__stats {
+    flex-direction: column;
+    border-radius: 16px;
+  }
+
+  .hero__stat {
+    padding: 18px 20px;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .hero__stat::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-radius: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(37, 99, 235, 0.3),
+      transparent
+    );
+  }
+
+  .hero__stat-divider {
+    display: none;
+  }
+
+  .hero__stat-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .hero__stat-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__stat {
+    padding: 16px 18px;
+  }
+
+  .hero__stat-number {
+    font-size: 0.92rem;
+  }
 }
 
 /* ---------- Floating Service Pills ---------- */
