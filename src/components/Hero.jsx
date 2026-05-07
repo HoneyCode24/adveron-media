@@ -104,8 +104,8 @@ const Hero = () => {
 
         {/* Subtext */}
         <p className="hero__subtext">
-          We build Meta ad creatives, AI UGC videos, websites, 
-          and social media systems that help businesses attract attention, 
+          We build Meta ad creatives, AI UGC videos, websites,
+          and social media systems that help businesses attract attention,
           build trust, and convert more customers.
         </p>
 
@@ -135,59 +135,59 @@ const Hero = () => {
 
         {/* Stats Row */}
         <div className="hero__stats">
- 
-  {/* Stat 1 — Free Demo */}
-  <div className="hero__stat">
-    <div className="hero__stat-icon">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
-      </svg>
-    </div>
-    <div className="hero__stat-text">
-      <span className="hero__stat-number">
-        <em>2 Free</em> Demo Ads
-      </span>
-      <span className="hero__stat-label">Before you pay a single rupee</span>
-    </div>
-  </div>
- 
-  <div className="hero__stat-divider" />
- 
-  {/* Stat 2 — AI UGC */}
-  <div className="hero__stat">
-    <div className="hero__stat-icon">
-      <svg viewBox="0 0 24 24">
-        <rect x="3" y="3" width="18" height="18" rx="4" />
-        <path d="M9 12l2 2 4-4" />
-      </svg>
-    </div>
-    <div className="hero__stat-text">
-      <span className="hero__stat-number">
-        AI UGC <em>+</em> Meta Ads
-      </span>
-      <span className="hero__stat-label">Complete growth system under one roof</span>
-    </div>
-  </div>
- 
-  <div className="hero__stat-divider" />
- 
-  {/* Stat 3 — Built by Operators */}
-  <div className="hero__stat">
-    <div className="hero__stat-icon">
-      <svg viewBox="0 0 24 24">
-        <circle cx="12" cy="8" r="4" />
-        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-      </svg>
-    </div>
-    <div className="hero__stat-text">
-      <span className="hero__stat-number">
-        Built by <em>Operators</em>
-      </span>
-      <span className="hero__stat-label">Real agency workflows, not theory</span>
-    </div>
-  </div>
- 
-</div>
+
+          {/* Stat 1 — Free Demo */}
+          <div className="hero__stat">
+            <div className="hero__stat-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
+              </svg>
+            </div>
+            <div className="hero__stat-text">
+              <span className="hero__stat-number">
+                <em>2 Free</em> Demo Ads
+              </span>
+              <span className="hero__stat-label">Before you pay a single rupee</span>
+            </div>
+          </div>
+
+          <div className="hero__stat-divider" />
+
+          {/* Stat 2 — AI UGC */}
+          <div className="hero__stat">
+            <div className="hero__stat-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="4" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <div className="hero__stat-text">
+              <span className="hero__stat-number">
+                AI UGC <em>+</em> Meta Ads
+              </span>
+              <span className="hero__stat-label">Complete growth system under one roof</span>
+            </div>
+          </div>
+
+          <div className="hero__stat-divider" />
+
+          {/* Stat 3 — Built by Operators */}
+          <div className="hero__stat">
+            <div className="hero__stat-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+              </svg>
+            </div>
+            <div className="hero__stat-text">
+              <span className="hero__stat-number">
+                Built by <em>Operators</em>
+              </span>
+              <span className="hero__stat-label">Real agency workflows, not theory</span>
+            </div>
+          </div>
+
+        </div>
 
 
       </div>
@@ -205,7 +205,7 @@ const Hero = () => {
         </div>
       </div>
 
-      
+
     </section>
   );
 };
