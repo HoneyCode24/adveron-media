@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import useScrollReveal from "../hooks/useScrollReveal";
 import "./Contact.css";
 
@@ -11,16 +11,16 @@ const initialFormState = {
 };
 
 const contactItems = [
-  {
-    label: "Email",
-    value: "hello@adveronmedia.com",
-    icon: "email",
-  },
-  {
-    label: "Phone",
-    value: "+91 98XXX XXXXX",
-    icon: "phone",
-  },
+  { label: "Email", value: "hello@adveronmedia.com", icon: "email" },
+  { label: "Phone", value: "+91 98XXX XXXXX",        icon: "phone" },
+];
+
+const services = [
+  "Meta Ads",
+  "Website Development",
+  "Social Media Management",
+  "Full Package",
+  "Not Sure Yet",
 ];
 
 const navLinks = ["Services", "Results", "About", "Contact"];
@@ -53,15 +53,6 @@ function ChatIcon() {
 }
 
 function ContactIcon({ type }) {
-  if (type === "location") {
-    return (
-      <svg viewBox="0 0 24 24" aria-hidden="true" className="contact-info-icon">
-        <path d="M12 21s7-6.7 7-13A7 7 0 0 0 5 8c0 6.3 7 13 7 13z" />
-        <circle cx="12" cy="8" r="2.5" />
-      </svg>
-    );
-  }
-
   if (type === "email") {
     return (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="contact-info-icon">
@@ -70,7 +61,6 @@ function ContactIcon({ type }) {
       </svg>
     );
   }
-
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className="contact-info-icon">
       <path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.7 21.4 2.6 13.3 2.6 3.4c0-.7.5-1.2 1.2-1.2h3.5c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.7.6 4 .1.4 0 .9-.3 1.2l-2.2 2.2z" />
@@ -80,9 +70,9 @@ function ContactIcon({ type }) {
 
 function CheckIcon() {
   return (
-    <svg viewBox="0 0 48 48" aria-hidden="true" className="success-icon">
-      <circle cx="24" cy="24" r="20" />
-      <path d="M15 24.5l6 6L34 17" />
+    <svg viewBox="0 0 72 72" aria-hidden="true" className="success-icon" fill="none">
+      <circle cx="36" cy="36" r="35" />
+      <path d="M20 36L30 46L52 24" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -97,7 +87,6 @@ function SocialIcon({ type }) {
       </svg>
     );
   }
-
   if (type === "facebook") {
     return (
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -105,7 +94,6 @@ function SocialIcon({ type }) {
       </svg>
     );
   }
-
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <rect x="4" y="9" width="4" height="11" />
@@ -121,47 +109,42 @@ export default function Contact() {
     threshold: 0.18,
     rootMargin: "0px 0px -80px 0px",
   });
-  const [formData, setFormData] = useState(initialFormState);
-  const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const [formData,      setFormData]      = useState(initialFormState);
+  const [submitted,     setSubmitted]     = useState(false);
+  const [focused,       setFocused]       = useState(null);
+  const [activeService, setActiveService] = useState("Meta Ads");
 
-    setFormData((currentData) => ({
-      ...currentData,
-      [name]: value,
-    }));
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     setSubmitted(true);
   };
 
   return (
     <section className="contact-section" ref={sectionRef} id="contact">
-      {/* Block 1 — CTA Banner */}
+
+      {/* ── Block 1 — CTA Banner ── */}
       <div className="cta-banner">
         <div className="cta-grid-overlay" />
-
         <div className="cta-content">
           <span className="contact-badge reveal reveal--delay-1">Let's Build Together</span>
-
           <h2 className="reveal reveal--delay-2">
             Ready to <span>Grow</span> Your Business Online?
           </h2>
-
           <p className="reveal reveal--delay-3">
             Book a free strategy call. No pressure, no jargon — just clarity on
             what will actually work for your business.
           </p>
-
           <div className="cta-actions reveal reveal--delay-4">
             <a href="#contact-form" className="cta-button cta-button-primary">
               <PhoneIcon />
               Book a Free Call
             </a>
-
             <a
               href="https://wa.me/919800000000"
               target="_blank"
@@ -175,103 +158,156 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Block 2 — Contact Form */}
+      {/* ── Block 2 — Contact Form ── */}
       <div className="contact-container">
         <div className="contact-form-card reveal reveal--delay-5" id="contact-form">
           {!submitted ? (
             <>
-              <div className="form-card-heading">
-                <h3>Send Us a Message</h3>
+              {/* Card Header */}
+              <div className="form-card-header">
+                <div className="form-card-header__left">
+                  <span className="form-card-eyebrow">Get In Touch</span>
+                  <h3 className="form-card-title">Send Us a Message</h3>
+                </div>
+                <div className="form-card-header__badge">
+                  <span className="form-response-dot" />
+                  Replies in 24h
+                </div>
               </div>
 
+              {/* Service Pill Selector */}
+              <div className="service-selector">
+                <p className="service-selector__label">I'm interested in</p>
+                <div className="service-selector__pills">
+                  {services.map((s) => (
+                    <button
+                      key={s}
+                      type="button"
+                      className={`service-pill ${activeService === s ? "service-pill--active" : ""}`}
+                      onClick={() => {
+                        setActiveService(s);
+                        setFormData((prev) => ({ ...prev, service: s }));
+                      }}
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="form-divider" />
+
               <form className="contact-form" onSubmit={handleSubmit}>
-                <div className="form-field">
-                  <label htmlFor="fullName">Full Name</label>
-                  <input
-                    id="fullName"
-                    type="text"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    placeholder="Enter your full name"
-                    required
-                  />
+
+                {/* Row: Name + Email */}
+                <div className="form-row">
+                  <div className={`form-field ${focused === "fullName" ? "form-field--focused" : ""} ${formData.fullName ? "form-field--filled" : ""}`}>
+                    <label htmlFor="fullName">Full Name</label>
+                    <div className="input-wrap">
+                      <svg className="input-icon" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="7" r="3" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M3 17c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                      </svg>
+                      <input
+                        id="fullName" type="text" name="fullName"
+                        value={formData.fullName} onChange={handleChange}
+                        onFocus={() => setFocused("fullName")}
+                        onBlur={() => setFocused(null)}
+                        placeholder="Your full name" required
+                      />
+                    </div>
+                  </div>
+
+                  <div className={`form-field ${focused === "email" ? "form-field--focused" : ""} ${formData.email ? "form-field--filled" : ""}`}>
+                    <label htmlFor="email">Business Email</label>
+                    <div className="input-wrap">
+                      <svg className="input-icon" viewBox="0 0 20 20" fill="none">
+                        <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M2 7l8 5 8-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                      </svg>
+                      <input
+                        id="email" type="email" name="email"
+                        value={formData.email} onChange={handleChange}
+                        onFocus={() => setFocused("email")}
+                        onBlur={() => setFocused(null)}
+                        placeholder="you@business.com" required
+                      />
+                    </div>
+                  </div>
                 </div>
 
-                <div className="form-field">
-                  <label htmlFor="email">Business Email</label>
-                  <input
-                    id="email"
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="you@business.com"
-                    required
-                  />
-                </div>
-
-                <div className="form-field">
+                {/* Phone */}
+                <div className={`form-field ${focused === "phone" ? "form-field--focused" : ""} ${formData.phone ? "form-field--filled" : ""}`}>
                   <label htmlFor="phone">Phone Number</label>
-                  <input
-                    id="phone"
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+91 XXXXX XXXXX"
-                    required
-                  />
+                  <div className="input-wrap">
+                    <svg className="input-icon" viewBox="0 0 20 20" fill="none">
+                      <path d="M5.3 9.1a13.6 13.6 0 005.6 5.6l1.9-1.9a.9.9 0 01.9-.2 10 10 0 003.1 1.1.9.9 0 01.7.9V17a.9.9 0 01-.9.9A15.3 15.3 0 012.1 3.9.9.9 0 013 3h2.5a.9.9 0 01.9.7 10 10 0 001 3.1.9.9 0 01-.1 1L5.3 9.1z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <input
+                      id="phone" type="tel" name="phone"
+                      value={formData.phone} onChange={handleChange}
+                      onFocus={() => setFocused("phone")}
+                      onBlur={() => setFocused(null)}
+                      placeholder="+91 XXXXX XXXXX" required
+                    />
+                  </div>
                 </div>
 
-                <div className="form-field">
-                  <label htmlFor="service">Service Interested In</label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                  >
-                    <option>Meta Ads</option>
-                    <option>Website Development</option>
-                    <option>Social Media Management</option>
-                    <option>Full Package</option>
-                    <option>Not Sure Yet</option>
-                  </select>
+                {/* Message */}
+                <div className={`form-field ${focused === "message" ? "form-field--focused" : ""} ${formData.message ? "form-field--filled" : ""}`}>
+                  <label htmlFor="message">
+                    Tell Us About Your Business
+                    <span className="char-hint">
+                      {formData.message.length > 0 ? `${formData.message.length} chars` : "optional detail"}
+                    </span>
+                  </label>
+                  <div className="input-wrap input-wrap--textarea">
+                    <textarea
+                      id="message" name="message" rows="4"
+                      value={formData.message} onChange={handleChange}
+                      onFocus={() => setFocused("message")}
+                      onBlur={() => setFocused(null)}
+                      placeholder="Tell us what you do, your goals, and what you need help with..."
+                    />
+                  </div>
                 </div>
 
-                <div className="form-field">
-                  <label htmlFor="message">Tell Us About Your Business</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us what you do, your goals, and what you need help with..."
-                    required
-                  />
-                </div>
-
+                {/* Submit */}
                 <button type="submit" className="form-submit-button">
-                  Send Message <span>→</span>
+                  <span className="form-submit-button__text">Send Message</span>
+                  <span className="form-submit-button__icon">
+                    <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
+                      <path d="M3 10h14M13 6l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
                 </button>
 
                 <p className="form-trust-line">
-                  🔒 Your information is 100% private. We respond within 24 hours.
+                  <svg viewBox="0 0 16 16" fill="none" width="13" height="13"
+                    style={{ display:"inline", marginRight:"5px", verticalAlign:"middle" }}>
+                    <rect x="3" y="7" width="10" height="8" rx="2" stroke="#8fa3c0" strokeWidth="1.3"/>
+                    <path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="#8fa3c0" strokeWidth="1.3" strokeLinecap="round"/>
+                  </svg>
+                  Your information is 100% private. We respond within 24 hours.
                 </p>
               </form>
             </>
           ) : (
             <div className="success-state">
-              <CheckIcon />
+              <div className="success-ring">
+                <CheckIcon />
+              </div>
               <h3>Message Sent!</h3>
               <p>We'll be in touch within 24 hours.</p>
+              <button className="success-back-btn" onClick={() => setSubmitted(false)}>
+                Send Another Message
+              </button>
             </div>
           )}
         </div>
 
-        {/* Block 3 — Contact Info Strip */}
+        {/* ── Block 3 — Contact Info Strip ── */}
         <div className="contact-info-strip">
           {contactItems.map((item, index) => (
             <div
@@ -282,7 +318,6 @@ export default function Contact() {
               <div className="contact-info-icon-wrap">
                 <ContactIcon type={item.icon} />
               </div>
-
               <div>
                 <span>{item.label}</span>
                 <p>{item.value}</p>
@@ -292,45 +327,9 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Block 4 — Footer */}
-      {/* <footer className="footer contact-reveal footer-reveal">
-        <div className="footer-inner">
-          <div className="footer-top">
-            <a href="#" className="footer-brand" aria-label="Adveron Media home">
-              <LogoMark />
-              <span>Adveron Media</span>
-            </a>
+      {/* ── Block 4 — Footer (uncomment when ready) ── */}
+      {/* <footer className="footer contact-reveal footer-reveal"> ... </footer> */}
 
-            <nav className="footer-nav" aria-label="Footer navigation">
-              {navLinks.map((link) => (
-                <a href={`#${link.toLowerCase()}`} key={link}>
-                  {link}
-                </a>
-              ))}
-            </nav>
-          </div>
-
-          <div className="footer-divider" />
-
-          <div className="footer-bottom">
-            <p>© 2025 Adveron Media. All rights reserved.</p>
-
-            <div className="footer-socials">
-              <a href="#" aria-label="Instagram">
-                <SocialIcon type="instagram" />
-              </a>
-
-              <a href="#" aria-label="Facebook">
-                <SocialIcon type="facebook" />
-              </a>
-
-              <a href="#" aria-label="LinkedIn">
-                <SocialIcon type="linkedin" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer> */}
     </section>
   );
 }

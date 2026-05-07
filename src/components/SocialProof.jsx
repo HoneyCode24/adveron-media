@@ -3,26 +3,26 @@ import "./SocialProof.css";
 
 const stats = [
   {
-    value: 150,
-    suffix: "+",
-    label: "Clients Scaled",
+    value: "Demo-First Approach",
+    // suffix: "+",
+    label: "See Your Ad Before Paying",
   },
   {
-    value: 4,
-    prefix: "₹",
-    suffix: "Cr+",
-    label: "Ad Spend Managed",
+    value: "AI UGC Ad Creatives",
+    // prefix: "₹",
+    // suffix: "Cr+",
+    label: "Built For Meta Ads",
   },
   {
-    value: 3.8,
-    suffix: "x",
-    label: "Average ROAS",
-    decimals: 1,
+    value: "Landing Page Support",
+    // suffix: "x",
+    label: "Website + Funnel Ready",
+    // decimals: 1,
   },
   {
-    value: 98,
-    suffix: "%",
-    label: "Client Retention Rate",
+    value: "48-Hour Onboarding",
+    // suffix: "%",
+    label: "Fast Start After Approval",
   },
 ];
 
@@ -59,10 +59,10 @@ const logos = [
 ];
 
 const trustBadges = [
-  {
-    title: "Certified Meta Ads Partner",
-    desc: "Campaigns built around platform-proven growth systems.",
-  },
+  // {
+  //   title: "Certified Meta Ads Partner",
+  //   desc: "Campaigns built around platform-proven growth systems.",
+  // },
   {
     title: "100% Transparent Reporting",
     desc: "Clear performance data, weekly insights, zero guesswork.",
@@ -212,7 +212,7 @@ export default function SocialProof() {
       </div>
 
       {/* Block 2 — Testimonials */}
-      <div className="social-proof-container">
+      {/* <div className="social-proof-container">
         <div className="social-proof-header reveal-item">
           <span className="social-proof-badge">What Our Clients Say</span>
           <h2>Real Businesses. Real Results.</h2>
@@ -240,10 +240,10 @@ export default function SocialProof() {
             </article>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Block 3 — Logo Marquee */}
-      <div className="logo-marquee reveal-item">
+      {/* <div className="logo-marquee reveal-item">
         <div className="logo-track">
           {[...logos, ...logos].map((logo, index) => (
             <span className="logo-item" key={`${logo}-${index}`}>
@@ -251,7 +251,7 @@ export default function SocialProof() {
             </span>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Block 4 — Trust Badges */}
       <div className="social-proof-container">

@@ -22,7 +22,7 @@ const reasons = [
     icon: "gears",
   },
   {
-    title: "Built for Indian Markets",
+    title: "Built For Business To Increase Growth",
     description:
       "We understand local buyer psychology, regional platforms, and price-sensitive funnels that actually convert.",
     icon: "pin",
@@ -153,13 +153,13 @@ export default function About() {
               </div>
 
               <div className="about-chip">
-                <strong>15+ Industries</strong>
+                <strong>8+ Industries</strong>
                 <span>served</span>
               </div>
             </div>
 
-            <a href="#team" className="about-link">
-              Meet the Team <span>→</span>
+            <a href="#contact" className="about-link">
+              Book a Free Strategy Call →<span>→</span>
             </a>
           </div>
 
@@ -180,10 +180,10 @@ export default function About() {
             </article>
 
             <article className="visual-card visual-card-front">
-              <div className="visual-card-label">Client Growth</div>
+              <div className="visual-card-label">Client Growth With</div>
 
-              <h3>₹12.4L</h3>
-              <p>Generated This Quarter</p>
+              <h3>Adveron Media Creative System</h3>
+              {/* <p>Generated This Quarter</p> */}
 
               <Sparkline />
             </article>

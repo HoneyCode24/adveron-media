@@ -502,8 +502,8 @@ export default function Pricing() {
           <div className="pricing-trust-chip">
             <span>🔒</span>
             <div>
-              <strong>No Lock-in Contracts</strong>
-              <p>cancel anytime</p>
+              <strong>No Long-Term Lock-In</strong>
+              <p>Cancel anytime after your billing cycle</p>
             </div>
           </div>
 
@@ -511,15 +511,15 @@ export default function Pricing() {
             <span>💬</span>
             <div>
               <strong>Free Strategy Call Included</strong>
-              <p>with every plan</p>
+              <p>Before we start your project</p>
             </div>
           </div>
 
           <div className="pricing-trust-chip">
             <span>⚡</span>
             <div>
-              <strong>Onboarding Within 48 Hours</strong>
-              <p>after sign-up</p>
+              <strong>48-Hour Onboarding</strong>
+              <p>Fast setup after confirmation</p>
             </div>
           </div>
         </div>

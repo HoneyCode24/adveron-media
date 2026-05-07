@@ -104,15 +104,15 @@ const Hero = () => {
 
         {/* Subtext */}
         <p className="hero__subtext">
-          We build high-converting Meta Ads, stunning websites, and powerful
-          social media presence — so your business attracts the right audience
-          and scales predictably.
+          We build Meta ad creatives, AI UGC videos, websites, 
+          and social media systems that help businesses attract attention, 
+          build trust, and convert more customers.
         </p>
 
         {/* CTAs */}
         <div className="hero__ctas">
           <a href="#contact" className="hero__btn hero__btn--primary">
-            <span>Start Growing Today</span>
+            <span>Get 2 Free Demo Ads</span>
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
               <path
                 fillRule="evenodd"
@@ -121,7 +121,7 @@ const Hero = () => {
               />
             </svg>
           </a>
-          <a href="#results" className="hero__btn hero__btn--secondary">
+          <a href="#contact" className="hero__btn hero__btn--secondary">
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
               <path
                 fillRule="evenodd"
@@ -129,25 +129,25 @@ const Hero = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <span>See Our Results</span>
+            <span>Book a Free Strategy Call</span>
           </a>
         </div>
 
         {/* Stats Row */}
         <div className="hero__stats">
           <div className="hero__stat">
-            <span className="hero__stat-number">150+</span>
-            <span className="hero__stat-label">Clients Scaled</span>
+            <span className="hero__stat-number">2 Free Demo Ads</span>
+            <span className="hero__stat-label">BEFORE YOU PAY</span>
           </div>
           <div className="hero__stat-divider" />
           <div className="hero__stat">
-            <span className="hero__stat-number">₹4Cr+</span>
-            <span className="hero__stat-label">Ad Spend Managed</span>
+            <span className="hero__stat-number">AI UGC + Meta Ads</span>
+            <span className="hero__stat-label">Complete Growth System</span>
           </div>
           <div className="hero__stat-divider" />
           <div className="hero__stat">
-            <span className="hero__stat-number">3.8x</span>
-            <span className="hero__stat-label">Avg. ROAS Delivered</span>
+            <span className="hero__stat-number">Built by Operators</span>
+            <span className="hero__stat-label">Experience From Real Agency Workflows</span>
           </div>
         </div>
 
