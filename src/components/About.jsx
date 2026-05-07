@@ -198,7 +198,7 @@ export default function About() {
 
             {/* FRONT CARD: Growth */}
             <article className="visual-card visual-card-front">
-              <div className="visual-card-label">Built for Indian Businesses</div>
+              <div className="visual-card-label">Built for Businesses</div>
               <h3>Real Growth.<br />No Fluff.</h3>
               <p className="card-tagline">
                 We tie our work to outcomes — leads, sales, and visibility — not vanity metrics.
@@ -208,9 +208,9 @@ export default function About() {
                   <span key={s} className="service-pill">{s}</span>
                 ))}
               </div>
-              <div className="card-divider" />
+              {/* <div className="card-divider" />
               <p className="sparkline-label">Typical client journey →</p>
-              <Sparkline />
+              <Sparkline /> */}
             </article>
           </div>
         </div>
