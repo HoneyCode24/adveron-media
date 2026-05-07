@@ -163,9 +163,46 @@
   transform: translateX(4px);
 }
 
-/* Visual card stack */
+/* Visual card stack
 
 /* Badge colour override for blue */
+.about-visual {
+  position: relative;
+  min-height: 480px;
+  display: grid;
+  place-items: center;
+}
+
+.visual-card {
+  position: absolute;        /* ← THIS is the key fix */
+  width: min(320px, 86vw);
+  border: 1px solid var(--clr-border);
+  border-radius: 16px;
+  background: rgba(17, 24, 39, 0.88);
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 24px 90px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Back card — peeking from top-right, rotated */
+.visual-card-back {
+  top: 20px;
+  right: 20px;
+  padding: 22px;
+  transform: rotate(-4deg);
+  z-index: 1;
+  opacity: 0.92;
+}
+
+/* Front card — overlaps center-left, sits on top */
+.visual-card-front {
+  bottom: 20px;
+  left: 20px;
+  padding: 26px;
+  transform: rotate(1deg);
+  z-index: 2;
+}
 .growth-badge.badge-blue {
   border-color: rgba(59, 130, 246, 0.3);
   background: rgba(59, 130, 246, 0.1);
