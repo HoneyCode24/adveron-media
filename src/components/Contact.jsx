@@ -3,8 +3,6 @@ import useScrollReveal from "../hooks/useScrollReveal";
 import "./Contact.css";
 
 
-
-
 const initialFormState = {
   fullName: "",
   email: "",
@@ -14,8 +12,8 @@ const initialFormState = {
 };
 
 const contactItems = [
-  { label: "Email", value: "hello@adveronmedia.com", icon: "email" },
-  { label: "Phone", value: "+91 98XXX XXXXX", icon: "phone" },
+  { label: "Email", value: "adveronmedia@gmail.com", icon: "email" },
+  { label: "Phone", value: "+91 6306294210", icon: "phone" },
 ];
 
 const services = [
@@ -160,7 +158,7 @@ const [errorMessage, setErrorMessage] = useState("");
   };
 
   return (
-    <section className="contact-section" ref={sectionRef} id="contact">
+    <section className="contact-section" ref={sectionRef}  id="contact">
 
       {/* ── Block 1 — CTA Banner ── */}
       <div className="cta-banner">
@@ -193,7 +191,7 @@ const [errorMessage, setErrorMessage] = useState("");
       </div>
 
       {/* ── Block 2 — Contact Form ── */}
-      <div className="contact-container">
+      <div className="contact-container" id="form">
         <div className="contact-form-card reveal reveal--delay-5" id="contact-form">
           {!submitted ? (
             <>

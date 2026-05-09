@@ -36,7 +36,7 @@ const goToPricingTab = (tabId) => {
   }, []);
 
   return (
-    <section className="hero" ref={heroRef}>
+    <section className="hero" id="hero" ref={heroRef}>
       {/* Animated grid background */}
       <div className="hero__grid" aria-hidden="true" />
 

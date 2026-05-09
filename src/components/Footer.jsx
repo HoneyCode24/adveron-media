@@ -2,18 +2,17 @@ import { useEffect, useRef } from "react";
 import "./Footer.css";
 
 const servicesLinks = [
-  "Meta Ads",
-  "Website Development",
-  "Social Media Management",
-  "Full Growth Package",
+  { label: "Meta Ads", tab: "meta-ads" },
+  { label: "Website Development", tab: "web-dev" },
+  { label: "Social Media Management", tab: "social-media" },
+  { label: "Full Growth Package", tab: "full-package" },
 ];
-
 const companyLinks = [
-  "About Us",
-  "Our Work",
-  "Results",
-  "Contact",
-  "Privacy Policy",
+  { label: "About Us", href: "#about" },
+  { label: "Contact", href: "#contact" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "Process", href: "#services" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
 const bottomLinks = ["Privacy Policy", "Terms of Service", "Sitemap"];
@@ -125,6 +124,19 @@ export default function Footer() {
     };
   }, []);
 
+  const goToPricingTab = (tabId) => {
+    sessionStorage.setItem("pricingTab", tabId);
+
+    document.getElementById("pricing")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    window.dispatchEvent(
+      new CustomEvent("changePricingTab", { detail: tabId })
+    );
+  };
+
   return (
     <footer className="site-footer" ref={footerRef}>
       {/* Row 1 — Pre-Footer CTA Band */}
@@ -133,7 +145,7 @@ export default function Footer() {
           <h2>Still thinking? Let's make it simple.</h2>
           <p>One free call. Zero obligations. Real strategy.</p>
 
-          <a href="#" className="footer-cta-button">
+          <a href="#form" className="footer-cta-button">
             Book Your Free Call <span>→</span>
           </a>
         </div>
@@ -173,7 +185,7 @@ export default function Footer() {
               </a>
             </div>
 
-           
+
           </div>
 
           <div
@@ -185,8 +197,13 @@ export default function Footer() {
 
             <ul className="footer-link-list">
               {servicesLinks.map((link) => (
-                <li key={link}>
-                  <a href="#">{link}</a>
+                <li key={link.label}>
+                  <button
+                    className="footer-service-link"
+                    onClick={() => goToPricingTab(link.tab)}
+                  >
+                    {link.label}
+                  </button>
                 </li>
               ))}
             </ul>
@@ -201,12 +218,13 @@ export default function Footer() {
 
             <ul className="footer-link-list">
               {companyLinks.map((link) => (
-                <li key={link}>
-                  <a href="#">{link}</a>
+                <li key={link.label}>
+                  <a href={link.href}>{link.label}</a>
                 </li>
               ))}
             </ul>
           </div>
+
 
           <div
             className="footer-column footer-contact-column footer-reveal footer-column-reveal"
@@ -228,7 +246,9 @@ export default function Footer() {
                 <ContactIcon type="email" />
                 <div>
                   <span>Email</span>
-                  <a href="#">hello@adveronmedia.com</a>
+                  <a href="mailto:adveronmedia@gmail.com">
+                    adveronmedia@gmail.com
+                  </a>
                 </div>
               </div>
 
@@ -236,14 +256,20 @@ export default function Footer() {
                 <ContactIcon type="phone" />
                 <div>
                   <span>Phone</span>
-                  <a href="#">+91 98XXX XXXXX</a>
+                  <a href="tel:+916306294210">
+                    +91 6306294210
+                  </a>
                 </div>
               </div>
             </div>
 
-            <a href="#" className="footer-whatsapp-chip">
-              <WhatsAppIcon />
-              Chat on WhatsApp
+            <a
+              href="https://wa.me/916306294210?text=Hi%20Adveron%20Media,%20I%20want%20to%20know%20more%20about%20your%20services."
+              target="_blank"
+              rel="noreferrer"
+              className="footer-whatsapp-chip"
+            >
+              🟢 Chat on WhatsApp
             </a>
           </div>
         </div>
