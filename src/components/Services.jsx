@@ -74,7 +74,7 @@ export default function Services() {
   });
 
   return (
-    <section className="services-section" ref={sectionRef}>
+    <section className="services-section" id="services" ref={sectionRef}>
       <div className="services-bg" aria-hidden="true" />
 
       <div className="services-container">

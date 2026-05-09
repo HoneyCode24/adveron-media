@@ -4,6 +4,21 @@ import logo from "../assets/logo.png";
 const Hero = () => {
   const heroRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(false);
+
+const goToPricingTab = (tabId) => {
+  sessionStorage.setItem("pricingTab", tabId);
+
+  document.getElementById("pricing")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+
+  window.dispatchEvent(
+    new CustomEvent("changePricingTab", { detail: tabId })
+  );
+};
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -50,11 +65,11 @@ const Hero = () => {
               Services
             </a>
           </li>
-          <li>
+          {/* <li>
             <a href="#results" onClick={() => setMenuOpen(false)}>
               Results
             </a>
-          </li>
+          </li> */}
           <li>
             <a href="#about" onClick={() => setMenuOpen(false)}>
               About
@@ -95,11 +110,11 @@ const Hero = () => {
         {/* Headline */}
         <h1 className="hero__headline">
           <span className="hero__headline-line hero__headline-line--1">
-            Turn Clicks Into <span className="hero__headline-gradient">Clients.</span>
+            Performance <span className="hero__headline-gradient">Creative Systems</span> For Modern Brands.
           </span>
-          <span className="hero__headline-line hero__headline-line--3">
+          {/* <span className="hero__headline-line hero__headline-line--3">
             Leads Into Revenue.
-          </span>
+          </span> */}
         </h1>
 
         {/* Subtext */}
@@ -107,12 +122,16 @@ const Hero = () => {
           We build Meta ad creatives, AI UGC videos, websites,
           and social media systems that help businesses attract attention,
           build trust, and convert more customers.
-        </p>
+        </p >
 
         {/* CTAs */}
         <div className="hero__ctas">
-          <a href="#contact" className="hero__btn hero__btn--primary">
+          <button
+            className="hero__btn hero__btn--primary"
+            onClick={() => setShowForm(true)}
+          >
             <span>Get 2 Free Demo Ads</span>
+
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
               <path
                 fillRule="evenodd"
@@ -120,8 +139,9 @@ const Hero = () => {
                 clipRule="evenodd"
               />
             </svg>
-          </a>
-          <a href="#contact" className="hero__btn hero__btn--secondary">
+          </button>
+          <a href="https://wa.me/916306294210?text=Hi%20Adveron%20Media,%20I%20want%20to%20book%20a%20strategy%20call." target="_blank" rel="noopener noreferrer"
+            className="hero__btn hero__btn--secondary">
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
               <path
                 fillRule="evenodd"
@@ -137,7 +157,8 @@ const Hero = () => {
         <div className="hero__stats">
 
           {/* Stat 1 — Free Demo */}
-          <div className="hero__stat">
+
+          <div className="hero__stat" >
             <div className="hero__stat-icon">
               <svg viewBox="0 0 24 24">
                 <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
@@ -147,14 +168,16 @@ const Hero = () => {
               <span className="hero__stat-number">
                 <em>2 Free</em> Demo Ads
               </span>
-              <span className="hero__stat-label">Before you pay a single rupee</span>
+              <span className="hero__stat-label">Before any upfront commitment</span>
             </div>
           </div>
+   
 
           <div className="hero__stat-divider" />
 
           {/* Stat 2 — AI UGC */}
-          <div className="hero__stat">
+      
+          <div className="hero__stat" >
             <div className="hero__stat-icon">
               <svg viewBox="0 0 24 24">
                 <rect x="3" y="3" width="18" height="18" rx="4" />
@@ -168,10 +191,12 @@ const Hero = () => {
               <span className="hero__stat-label">Complete growth system under one roof</span>
             </div>
           </div>
+      
 
           <div className="hero__stat-divider" />
 
           {/* Stat 3 — Built by Operators */}
+          
           <div className="hero__stat">
             <div className="hero__stat-icon">
               <svg viewBox="0 0 24 24">
@@ -186,6 +211,7 @@ const Hero = () => {
               <span className="hero__stat-label">Real agency workflows, not theory</span>
             </div>
           </div>
+      
 
         </div>
 
@@ -194,17 +220,121 @@ const Hero = () => {
 
       {/* Floating Service Pills */}
       <div className="hero__pills">
-        <div className="hero__pill hero__pill--1">
-          <span className="hero__pill-icon">⚡</span> Meta Ads
-        </div>
-        <div className="hero__pill hero__pill--2">
+          <div className="hero__pill hero__pill--1" onClick={() => goToPricingTab("meta-ads")}>
+            <span className="hero__pill-icon">⚡</span> Meta Ads
+          </div>
+        <div className="hero__pill hero__pill--2"  onClick={() => goToPricingTab("web-dev")}>
           <span className="hero__pill-icon">🌐</span> Web Development
         </div>
-        <div className="hero__pill hero__pill--3">
+        <div className="hero__pill hero__pill--3" onClick={() => goToPricingTab("social-media")}>
           <span className="hero__pill-icon">📈</span> Social Media
         </div>
       </div>
+      {showForm && (
+        <div className="modal-overlay">
+          <div className="modal-box">
 
+            <button
+              className="close-btn"
+              onClick={() => setShowForm(false)}
+            >
+              ✕
+            </button>
+
+            <h2>Claim 2 Free Demo Ads</h2>
+
+            <p>
+              Tell us about your business and we'll create
+              2 free demo creatives for your brand.
+            </p>
+              {successMessage && (
+                <div className="success-toast">
+                  <div className="success-icon">✓</div>
+
+                  <div>
+                    <h4>Request Submitted</h4>
+                    <p>Redirecting you to WhatsApp...</p>
+                  </div>
+                </div>
+              )}
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+
+                const formData = new FormData(e.target);
+
+                const response = await fetch(
+                  "https://formspree.io/f/xlgzpzvk",
+                  {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                      Accept: "application/json",
+                    },
+                  }
+                );
+
+                if (response.ok) {
+                  setSuccessMessage(true);
+
+                  e.target.reset();
+
+                  setTimeout(() => {
+                    setShowForm(false);
+
+                    setSuccessMessage(false);
+
+                    // window.open(
+                    //   "https://wa.me/91XXXXXXXXXX?text=Hi%20Adveron%20Media,%20I%20just%20submitted%20the%20demo%20ads%20form.",
+                    //   "_blank"
+                    // );
+                  }, 2000);
+                }
+              }}
+              className="lead-form"
+            >
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+              />
+
+              <input
+                type="text"
+                name="brand"
+                placeholder="Brand / Business Name"
+                required
+              />
+
+              <input
+                type="text"
+                name="social"
+                placeholder="Instagram or Website"
+                required
+              />
+
+              <input
+                type="tel"
+                name="whatsapp"
+                placeholder="WhatsApp Number"
+                required
+              />
+
+              <textarea
+                name="business"
+                placeholder="What do you sell?"
+                required
+              ></textarea>
+
+              <button type="submit">
+                Submit Request
+              </button>
+            </form>
+
+          </div>
+        </div>
+      )}
 
     </section>
   );

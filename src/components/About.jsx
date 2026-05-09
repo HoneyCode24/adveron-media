@@ -120,7 +120,7 @@ export default function About() {
   });
 
   return (
-    <section className="about-section" ref={sectionRef}>
+    <section className="about-section" id="about" ref={sectionRef}>
       <div className="about-container">
         {/* Block 1 — About Adveron Media */}
         <div className="about-split">

@@ -263,7 +263,9 @@ function PricingCard({ plan, index }) {
       className={`pricing-card ${plan.popular ? "pricing-card--popular" : ""}`}
       style={{ "--card-delay": `${index * 100}ms` }}
     >
-      {plan.popular && <div className="pricing-popular-badge">Most Popular</div>}
+      {plan.popular && (
+        <div className="pricing-popular-badge">Most Popular</div>
+      )}
 
       <div className="pricing-card__tier">
         <span className={`pricing-card__dot pricing-card__dot--${plan.dot}`} />
@@ -333,7 +335,11 @@ function FullPackage() {
           <span className="pricing-full__save-badge">Save up to 30%</span>
         </div>
 
-        <div className="pricing-bundle-toggle" role="tablist" aria-label="Bundle options">
+        <div
+          className="pricing-bundle-toggle"
+          role="tablist"
+          aria-label="Bundle options"
+        >
           {Object.entries(bundleData).map(([id, bundle]) => (
             <button
               key={id}
@@ -427,7 +433,7 @@ export default function Pricing() {
           observer.unobserve(section);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     observer.observe(section);
@@ -435,6 +441,7 @@ export default function Pricing() {
     return () => observer.disconnect();
   }, []);
 
+  
   const handleTabChange = (tabId) => {
     if (tabId === activeTab) return;
 
@@ -445,6 +452,20 @@ export default function Pricing() {
       setCardsEntering(true);
     }, 10);
   };
+
+  useEffect(() => {
+    const handleExternalTabChange = (event) => {
+      handleTabChange(event.detail);
+    };
+
+    window.addEventListener("changePricingTab", handleExternalTabChange);
+
+    return () => {
+      window.removeEventListener("changePricingTab", handleExternalTabChange);
+    };
+  }, [activeTab]);
+
+
 
   return (
     <section className="pricing" ref={sectionRef} id="pricing">
@@ -466,7 +487,11 @@ export default function Pricing() {
         </div>
 
         <div className="pricing-tabs-wrap reveal-item">
-          <div className="pricing-tabs" role="tablist" aria-label="Pricing services">
+          <div
+            className="pricing-tabs"
+            role="tablist"
+            aria-label="Pricing services"
+          >
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -490,7 +515,11 @@ export default function Pricing() {
           {activePricing.type === "cards" ? (
             <div className="pricing-cards">
               {activePricing.plans.map((plan, index) => (
-                <PricingCard key={`${activeTab}-${plan.name}`} plan={plan} index={index} />
+                <PricingCard
+                  key={`${activeTab}-${plan.name}`}
+                  plan={plan}
+                  index={index}
+                />
               ))}
             </div>
           ) : (
