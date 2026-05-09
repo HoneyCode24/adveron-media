@@ -230,6 +230,7 @@ const goToPricingTab = (tabId) => {
           <span className="hero__pill-icon">📈</span> Social Media
         </div>
       </div>
+      
       {showForm && (
         <div className="modal-overlay">
           <div className="modal-box">

@@ -128,8 +128,8 @@ export default function About() {
             <span className="about-badge">Who We Are</span>
 
             <h2>
-              We're Not an Agency. We're Your{" "}
-              <span>Growth</span> Partner.
+              Built For Businesses That Want {" "}
+              <span>Real Growth.</span> 
             </h2>
 
             <div className="about-copy">

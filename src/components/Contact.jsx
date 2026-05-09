@@ -2,6 +2,9 @@ import { useState } from "react";
 import useScrollReveal from "../hooks/useScrollReveal";
 import "./Contact.css";
 
+
+
+
 const initialFormState = {
   fullName: "",
   email: "",
@@ -12,7 +15,7 @@ const initialFormState = {
 
 const contactItems = [
   { label: "Email", value: "hello@adveronmedia.com", icon: "email" },
-  { label: "Phone", value: "+91 98XXX XXXXX",        icon: "phone" },
+  { label: "Phone", value: "+91 98XXX XXXXX", icon: "phone" },
 ];
 
 const services = [
@@ -103,6 +106,8 @@ function SocialIcon({ type }) {
   );
 }
 
+
+
 export default function Contact() {
   const sectionRef = useScrollReveal({
     selector: ".reveal",
@@ -110,19 +115,48 @@ export default function Contact() {
     rootMargin: "0px 0px -80px 0px",
   });
 
-  const [formData,      setFormData]      = useState(initialFormState);
-  const [submitted,     setSubmitted]     = useState(false);
-  const [focused,       setFocused]       = useState(null);
+  const [formData, setFormData] = useState(initialFormState);
+  const [focused, setFocused] = useState(null);
   const [activeService, setActiveService] = useState("Meta Ads");
+  const [submitted, setSubmitted] = useState(false);
+const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+
+    setErrorMessage("");
+
+    const data = new FormData();
+    data.append("service", formData.service || activeService);
+    data.append("fullName", formData.fullName);
+    data.append("email", formData.email);
+    data.append("phone", formData.phone);
+    data.append("message", formData.message);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xgodnbnn", {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData(initialFormState);
+        setActiveService("Meta Ads");
+      } else {
+        setErrorMessage("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setErrorMessage("Network error. Please check your connection.");
+    }
   };
 
   return (
@@ -146,7 +180,7 @@ export default function Contact() {
               Book a Free Call
             </a>
             <a
-              href="https://wa.me/919800000000"
+              href="https://wa.me/916306294210?text=Hi%20Adveron%20Media,%20I%20want%20to%20grow%20my%20business."
               target="_blank"
               rel="noreferrer"
               className="cta-button cta-button-ghost"
@@ -197,6 +231,22 @@ export default function Contact() {
 
               {/* Divider */}
               <div className="form-divider" />
+              {errorMessage && (
+                <div className="form-error-message">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                    <path
+                      d="M12 7v6"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <circle cx="12" cy="17" r="1" fill="currentColor" />
+                  </svg>
+
+                  <span>{errorMessage}</span>
+                </div>
+              )}
 
               <form className="contact-form" onSubmit={handleSubmit}>
 
@@ -206,8 +256,8 @@ export default function Contact() {
                     <label htmlFor="fullName">Full Name</label>
                     <div className="input-wrap">
                       <svg className="input-icon" viewBox="0 0 20 20" fill="none">
-                        <circle cx="10" cy="7" r="3" stroke="currentColor" strokeWidth="1.5"/>
-                        <path d="M3 17c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                        <circle cx="10" cy="7" r="3" stroke="currentColor" strokeWidth="1.5" />
+                        <path d="M3 17c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                       <input
                         id="fullName" type="text" name="fullName"
@@ -223,8 +273,8 @@ export default function Contact() {
                     <label htmlFor="email">Business Email</label>
                     <div className="input-wrap">
                       <svg className="input-icon" viewBox="0 0 20 20" fill="none">
-                        <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-                        <path d="M2 7l8 5 8-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                        <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
+                        <path d="M2 7l8 5 8-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                       <input
                         id="email" type="email" name="email"
@@ -242,7 +292,7 @@ export default function Contact() {
                   <label htmlFor="phone">Phone Number</label>
                   <div className="input-wrap">
                     <svg className="input-icon" viewBox="0 0 20 20" fill="none">
-                      <path d="M5.3 9.1a13.6 13.6 0 005.6 5.6l1.9-1.9a.9.9 0 01.9-.2 10 10 0 003.1 1.1.9.9 0 01.7.9V17a.9.9 0 01-.9.9A15.3 15.3 0 012.1 3.9.9.9 0 013 3h2.5a.9.9 0 01.9.7 10 10 0 001 3.1.9.9 0 01-.1 1L5.3 9.1z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M5.3 9.1a13.6 13.6 0 005.6 5.6l1.9-1.9a.9.9 0 01.9-.2 10 10 0 003.1 1.1.9.9 0 01.7.9V17a.9.9 0 01-.9.9A15.3 15.3 0 012.1 3.9.9.9 0 013 3h2.5a.9.9 0 01.9.7 10 10 0 001 3.1.9.9 0 01-.1 1L5.3 9.1z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     <input
                       id="phone" type="tel" name="phone"
@@ -278,16 +328,16 @@ export default function Contact() {
                   <span className="form-submit-button__text">Send Message</span>
                   <span className="form-submit-button__icon">
                     <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
-                      <path d="M3 10h14M13 6l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M3 10h14M13 6l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
                 </button>
 
                 <p className="form-trust-line">
                   <svg viewBox="0 0 16 16" fill="none" width="13" height="13"
-                    style={{ display:"inline", marginRight:"5px", verticalAlign:"middle" }}>
-                    <rect x="3" y="7" width="10" height="8" rx="2" stroke="#8fa3c0" strokeWidth="1.3"/>
-                    <path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="#8fa3c0" strokeWidth="1.3" strokeLinecap="round"/>
+                    style={{ display: "inline", marginRight: "5px", verticalAlign: "middle" }}>
+                    <rect x="3" y="7" width="10" height="8" rx="2" stroke="#8fa3c0" strokeWidth="1.3" />
+                    <path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="#8fa3c0" strokeWidth="1.3" strokeLinecap="round" />
                   </svg>
                   Your information is 100% private. We respond within 24 hours.
                 </p>
