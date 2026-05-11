@@ -231,6 +231,8 @@
     background 0.3s ease;
 }
 
+
+
 .cards--entering .pricing-card {
   opacity: 1;
   transform: translateY(0);
@@ -355,7 +357,14 @@
   margin: 0;
   padding: 0;
   list-style: none;
+    margin-bottom: 28px;
 }
+
+
+.pricing-card__button {
+  margin-top: auto;
+}
+
 
 .pricing-card__features li {
   display: flex;

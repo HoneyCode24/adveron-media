@@ -3,58 +3,64 @@ import "./Pricing.css";
 
 const pricingData = {
   "meta-ads": {
-    label: "Meta Ads",
+    label: "AI UGC Ads",
     type: "cards",
     plans: [
       {
-        name: "Basic",
+        name: "Creative Test Pack",
         dot: "grey",
-        price: "₹15,000",
-        billing: "/month",
-        tagline: "For businesses just starting with paid ads",
+        price: "$250",
+        billing: "one-time",
+        tagline: "Validate winning ad angles before scaling",
         popular: false,
-        cta: "Get Started",
+        cta: "Start Testing",
         features: [
-          { text: "1 active campaign", included: true },
-          { text: "Audience research & setup", included: true },
-          { text: "4 ad creatives/month", included: true },
-          { text: "Monthly performance report", included: true },
-          { text: "A/B testing", included: false },
-          { text: "Dedicated account manager", included: false },
+          { text: "3 conversion-focused AI UGC creatives", included: true },
+          { text: "3 different creative angles", included: true },
+          { text: "Multiple hook variations", included: true },
+          { text: "Versions with & without captions", included: true },
+          { text: "Performance-driven scriptwriting", included: true },
+          { text: "Competitor & market research", included: true },
+          { text: "High-volume monthly production", included: false },
+          { text: "Dedicated creative strategy", included: false },
         ],
       },
       {
-        name: "Standard",
+        name: "Growth Creative System",
         dot: "blue",
-        price: "₹28,000",
+        price: "$997",
         billing: "/month",
-        tagline: "For growing businesses ready to scale",
+        tagline: "Consistent creative testing for brands running paid ads",
         popular: true,
-        cta: "Choose Standard",
+        cta: "Choose Growth",
         features: [
-          { text: "3 active campaigns", included: true },
-          { text: "Full audience & funnel strategy", included: true },
-          { text: "10 ad creatives/month", included: true },
-          { text: "Weekly performance reports", included: true },
-          { text: "A/B testing & optimization", included: true },
-          { text: "Dedicated account manager", included: false },
+          { text: "20 performance-focused AI UGC creatives", included: true },
+          { text: "Competitor & market research", included: true },
+          { text: "Multiple creative angles", included: true },
+          { text: "Versions with & without captions", included: true },
+          { text: "Multi-angle performance scripts", included: true },
+          { text: "Hook testing variations", included: true },
+          { text: "Creative refresh workflow", included: true },
+          { text: "Custom workflow integration", included: false },
         ],
       },
       {
-        name: "Advanced",
+        name: "Creative Scale System",
         dot: "amber",
-        price: "₹50,000",
-        billing: "/month",
-        tagline: "For brands serious about dominating their market",
+        price: "Custom",
+        billing: "pricing",
+        tagline: "Ongoing creative infrastructure for scaling brands",
         popular: false,
-        cta: "Scale With Us",
+        cta: "Build Scale Plan",
         features: [
-          { text: "Unlimited campaigns", included: true },
-          { text: "Full funnel strategy + retargeting", included: true },
-          { text: "20+ ad creatives/month", included: true },
-          { text: "Daily monitoring & optimization", included: true },
-          { text: "A/B testing & optimization", included: true },
-          { text: "Dedicated account manager", included: true },
+          { text: "Ongoing high-volume creative production", included: true },
+          { text: "Continuous creative testing", included: true },
+          { text: "Dedicated creative strategy", included: true },
+          { text: "Multi-format creative assets", included: true },
+          { text: "Creative refresh workflow", included: true },
+          { text: "Priority production support", included: true },
+          { text: "Flexible scaling capacity", included: true },
+          { text: "Custom workflow integration", included: true },
         ],
       },
     ],
@@ -65,173 +71,205 @@ const pricingData = {
     type: "cards",
     plans: [
       {
-        name: "Basic",
+        name: "Launch Page",
         dot: "grey",
-        price: "₹25,000",
+        price: "$499",
         billing: "one-time",
-        tagline: "Clean, professional online presence",
+        tagline: "For brands that need a premium landing page fast",
         popular: false,
+        cta: "Launch My Page",
+        features: [
+          { text: "1 high-converting landing page", included: true },
+          { text: "Mobile-first responsive design", included: true },
+          { text: "Premium modern layout", included: true },
+          { text: "CTA sections", included: true },
+          { text: "Contact / lead form setup", included: true },
+          { text: "Basic SEO structure", included: true },
+          { text: "Speed optimization", included: true },
+          { text: "1 revision round", included: true },
+        ],
+      },
+      {
+        name: "Business Website",
+        dot: "blue",
+        price: "$997",
+        billing: "one-time",
+        tagline: "A premium business website built for trust and leads",
+        popular: true,
         cta: "Build My Website",
         features: [
-          { text: "Up to 5 pages", included: true },
-          { text: "Mobile responsive design", included: true },
-          { text: "Basic SEO setup", included: true },
+          { text: "4-page premium website", included: true },
+          {
+            text: "Homepage, services, about, contact + extra page",
+            included: true,
+          },
+          { text: "Conversion-focused copy structure", included: true },
+          { text: "Mobile-first design", included: true },
           { text: "Contact form integration", included: true },
-          { text: "Custom animations", included: false },
-          { text: "CMS / blog integration", included: false },
+          { text: "Basic SEO setup", included: true },
+          { text: "Speed optimization", included: true },
+          { text: "2 revision rounds", included: true },
         ],
       },
+
       {
-        name: "Standard",
-        dot: "blue",
-        price: "₹45,000",
-        billing: "one-time",
-        tagline: "A website that actually converts visitors",
-        popular: true,
-        cta: "Choose Standard",
-        features: [
-          { text: "Up to 10 pages", included: true },
-          { text: "Mobile-first premium design", included: true },
-          { text: "Full on-page SEO", included: true },
-          { text: "Custom animations & interactions", included: true },
-          { text: "CMS / blog integration", included: true },
-          { text: "E-commerce functionality", included: false },
-        ],
-      },
-      {
-        name: "Advanced",
+        name: "E-Commerce / Custom Build",
         dot: "amber",
-        price: "₹80,000",
-        billing: "one-time",
-        tagline: "Full-scale web presence built to lead",
+        price: "Custom",
+        billing: "pricing",
+        tagline: "For Shopify stores, advanced funnels, and custom systems",
         popular: false,
-        cta: "Start Advanced Build",
+        cta: "Discuss Custom Build",
         features: [
-          { text: "Unlimited pages", included: true },
-          { text: "Custom UI/UX design system", included: true },
-          { text: "Advanced SEO + speed optimization", included: true },
-          { text: "E-commerce / booking integration", included: true },
-          { text: "CMS + admin dashboard", included: true },
-          { text: "3 months post-launch support", included: true },
+          { text: "Custom Shopify development", included: true },
+          { text: "Advanced integrations", included: true },
+          { text: "High-converting product pages", included: true },
+          { text: "Custom landing funnels", included: true },
+          { text: "Scalable infrastructure", included: true },
+          { text: "Tailored development workflow", included: true },
+          { text: "Built for paid traffic conversion", included: true },
+          { text: "Custom launch support", included: true },
         ],
       },
     ],
   },
 
   "social-media": {
-    label: "Social Media",
+    label: "Social Growth",
     type: "cards",
     plans: [
       {
-        name: "Basic",
+        name: "Content Launch System",
         dot: "grey",
-        price: "₹12,000",
+        price: "$497",
         billing: "/month",
-        tagline: "Consistent presence on social media",
+        tagline:
+          "Consistent short-form content for brands starting organic growth",
         popular: false,
-        cta: "Get Started",
+        cta: "Start Content",
         features: [
-          { text: "2 platforms managed", included: true },
-          { text: "12 posts/month", included: true },
-          { text: "Basic graphic design", included: true },
-          { text: "Monthly content calendar", included: true },
-          { text: "Reels / video content", included: false },
-          { text: "Community management", included: false },
+          { text: "12 short-form content pieces/month", included: true },
+          { text: "Captions + posting copy", included: true },
+          { text: "Basic content calendar", included: true },
+          { text: "Platform-optimized formatting", included: true },
+          { text: "Basic monthly analytics", included: true },
+          { text: "AI UGC content system", included: false },
+          { text: "Advanced trend planning", included: false },
         ],
       },
       {
-        name: "Standard",
+        name: "Organic Growth System",
         dot: "blue",
-        price: "₹22,000",
+        price: "$997",
         billing: "/month",
-        tagline: "Active growth across your key platforms",
+        tagline: "A stronger content engine for visibility, trust, and demand",
         popular: true,
-        cta: "Choose Standard",
+        cta: "Choose Growth",
         features: [
-          { text: "3 platforms managed", included: true },
-          { text: "20 posts + 4 reels/month", included: true },
-          { text: "Premium branded graphics", included: true },
-          { text: "Content calendar + strategy", included: true },
-          { text: "Community management & replies", included: true },
-          { text: "Influencer outreach", included: false },
+          { text: "20 short-form content pieces/month", included: true },
+          { text: "AI UGC content support", included: true },
+          { text: "Hooks + scripting direction", included: true },
+          { text: "Reels/TikTok optimization", included: true },
+          { text: "Trend planning", included: true },
+          { text: "Monthly performance review", included: true },
+          { text: "Multi-platform content strategy", included: true },
         ],
       },
       {
-        name: "Advanced",
+        name: "Brand Scale System",
         dot: "amber",
-        price: "₹38,000",
+        price: "$1,997+",
         billing: "/month",
-        tagline: "Full-service social media domination",
+        tagline: "High-volume content infrastructure for brands ready to scale",
         popular: false,
-        cta: "Dominate Socials",
+        cta: "Scale Content",
         features: [
-          { text: "All platforms managed", included: true },
-          { text: "30 posts + 8 reels/month", included: true },
-          { text: "Full content production team", included: true },
-          { text: "Growth strategy & analytics", included: true },
-          { text: "Community management", included: true },
-          { text: "Influencer outreach & collabs", included: true },
+          { text: "Custom high-volume content production", included: true },
+          { text: "Advanced organic strategy", included: true },
+          { text: "AI UGC systems", included: true },
+          { text: "Multi-platform scaling", included: true },
+          { text: "Premium editing workflow", included: true },
+          { text: "Launch / refresh cycles", included: true },
+          { text: "Priority production support", included: true },
         ],
       },
     ],
   },
 
   "full-package": {
-    label: "Full Package",
+    label: "Brand Launch System",
     type: "bundle",
   },
 };
 
 const bundleData = {
-  basic: {
-    label: "Basic Bundle",
-    price: "₹45,000",
-    billing: "/month",
-    separateCost: "₹52,000",
-    savings: "₹7,000",
-    chips: ["Meta Ads Basic", "Website Basic", "Social Basic"],
+  launch: {
+    label: "Brand Launch System",
+    price: "$1,497",
+    billing: "one-time",
+    separateCost: "Launch-ready",
+    savings: "System bundle",
+    cta: "Launch My Brand System",
+    chips: [
+      "20 AI UGC Creatives",
+      "Conversion Landing Page",
+      "8 Organic Content Pieces",
+    ],
     features: [
-      "1 active Meta Ads campaign",
-      "Up to 5-page business website",
-      "2 social platforms managed",
-      "4 ad creatives/month",
-      "12 social posts/month",
-      "Monthly reporting across services",
+      "20 performance-focused AI UGC creatives",
+      "Premium modern conversion landing page",
+      "8 short-form organic content pieces",
+      "Competitor & market research",
+      "Brand positioning guidance",
+      "30 bonus static ad creatives",
+      "Strategy setup call",
+      "Priority production workflow",
     ],
   },
-  standard: {
-    label: "Standard Bundle",
-    price: "₹80,000",
+  growth: {
+    label: "Brand Growth Infrastructure",
+    price: "$2,997",
     billing: "/month",
-    separateCost: "₹95,000",
-    savings: "₹15,000",
-    chips: ["Meta Ads Standard", "Website Standard", "Social Standard"],
+    separateCost: "Scaling system",
+    savings: "Monthly growth infrastructure",
+    cta: "Scale My Brand Infrastructure",
+    chips: [
+      "30–50 AI UGC / Month",
+      "20 Organic Content Pieces",
+      "Monthly Strategy Call",
+    ],
     features: [
-      "3 active Meta Ads campaigns",
-      "Up to 10-page conversion-focused website",
-      "3 social platforms managed",
-      "10 ad creatives/month",
-      "20 posts + 4 reels/month",
-      "Weekly performance reports",
-      "A/B testing and optimization",
+      "30–50 performance-focused AI UGC creatives / month",
+      "Continuous creative testing and refresh workflow",
+      "Monthly strategic planning",
+      "Audience targeting insights",
+      "Offer positioning refinement",
+      "20 short-form organic content pieces / month",
+      "50 bonus static ad creatives",
+      "Conversion website support",
     ],
   },
-  premium: {
-    label: "Premium Bundle",
-    price: "₹1,20,000",
-    billing: "/month",
-    separateCost: "₹1,68,000",
-    savings: "₹48,000",
-    chips: ["Meta Ads Advanced", "Website Advanced", "Social Advanced"],
+  scale: {
+    label: "Creative Scale Partner",
+    price: "Custom",
+    billing: "pricing",
+    separateCost: "Enterprise scale",
+    savings: "Flexible capacity",
+    cta: "Build My Creative Scale System",
+    chips: [
+      "50–200+ AI UGC / Month",
+      "40+ Organic Pieces",
+      "Advanced Growth Strategy",
+    ],
     features: [
-      "Unlimited Meta Ads campaigns",
-      "Unlimited-page advanced website",
-      "All platforms managed",
-      "20+ ad creatives/month",
-      "30 posts + 8 reels/month",
-      "Daily monitoring and optimization",
-      "Dedicated account manager",
-      "Advanced SEO + speed optimization",
+      "50–200+ performance-focused AI UGC creatives / month",
+      "High-speed campaign support",
+      "Dedicated creative growth strategy",
+      "Creative performance analysis",
+      "40+ short-form organic content pieces / month",
+      "Advanced competitor & market intelligence",
+      "100+ bonus static ad creatives",
+      "Flexible scaling capacity",
     ],
   },
 };
@@ -257,7 +295,7 @@ function CrossIcon() {
   );
 }
 
-function PricingCard({ plan, index }) {
+function PricingCard({ plan, index, onSelect }) {
   return (
     <article
       className={`pricing-card ${plan.popular ? "pricing-card--popular" : ""}`}
@@ -299,6 +337,7 @@ function PricingCard({ plan, index }) {
         className={`pricing-card__button ${
           plan.popular ? "pricing-card__button--filled" : ""
         }`}
+        onClick={onSelect}
       >
         {plan.cta}
       </button>
@@ -307,7 +346,7 @@ function PricingCard({ plan, index }) {
 }
 
 function FullPackage() {
-  const [selectedBundle, setSelectedBundle] = useState("standard");
+  const [selectedBundle, setSelectedBundle] = useState("launch");
   const [bundleEntering, setBundleEntering] = useState(true);
 
   const currentBundle = bundleData[selectedBundle];
@@ -329,10 +368,12 @@ function FullPackage() {
         <div className="pricing-full__top">
           <div>
             <p className="pricing-full__eyebrow">Complete Growth System</p>
-            <h3>Complete Growth System</h3>
+            <h3>Brand Launch & Scale Systems</h3>
           </div>
 
-          <span className="pricing-full__save-badge">Save up to 30%</span>
+          <span className="pricing-full__save-badge">
+            Built for scaling brands
+          </span>
         </div>
 
         <div
@@ -384,7 +425,7 @@ function FullPackage() {
           </ul>
         </div>
 
-        <button className="pricing-full__cta">Get the Full Package →</button>
+        <button className="pricing-full__cta">{currentBundle.cta} →</button>
       </article>
 
       <div className="pricing-breakdown">
@@ -441,7 +482,6 @@ export default function Pricing() {
     return () => observer.disconnect();
   }, []);
 
-  
   const handleTabChange = (tabId) => {
     if (tabId === activeTab) return;
 
@@ -465,7 +505,24 @@ export default function Pricing() {
     };
   }, [activeTab]);
 
+  const serviceMap = {
+    "meta-ads": "Meta Ads",
+    "web-dev": "Website Development",
+    "social-media": "Social Media Management",
+    "full-package": "Full Package",
+  };
+  const handlePricingCTA = (service, packageName) => {
+    window.dispatchEvent(
+      new CustomEvent("selectContactService", {
+        detail: { service, packageName },
+      }),
+    );
 
+    document.getElementById("contact-form")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <section className="pricing" ref={sectionRef} id="pricing">
@@ -474,15 +531,17 @@ export default function Pricing() {
 
       <div className="pricing__container">
         <div className="pricing__header">
-          <div className="pricing__badge reveal-item">Transparent Pricing</div>
+          <div className="pricing__badge reveal-item">
+            Global Growth Pricing
+          </div>
 
           <h2 className="reveal-item">
-            Simple Pricing. <span>Serious</span> Results.
+            Global Pricing. <span>Built</span> For Growth.
           </h2>
 
           <p className="reveal-item">
-            No hidden fees, no surprise invoices. Pick the plan that fits your
-            stage — upgrade anytime.
+            Clear USD pricing for brands that need AI UGC creatives, conversion
+            websites, and social content systems.
           </p>
         </div>
 
@@ -519,6 +578,9 @@ export default function Pricing() {
                   key={`${activeTab}-${plan.name}`}
                   plan={plan}
                   index={index}
+                  onSelect={() =>
+                    handlePricingCTA(serviceMap[activeTab], plan.name)
+                  }
                 />
               ))}
             </div>
@@ -531,24 +593,24 @@ export default function Pricing() {
           <div className="pricing-trust-chip">
             <span>🔒</span>
             <div>
-              <strong>No Long-Term Lock-In</strong>
-              <p>Cancel anytime after your billing cycle</p>
+              <strong>Simple Starting Point</strong>
+              <p>Start with one-time packs or scale monthly</p>
             </div>
           </div>
 
           <div className="pricing-trust-chip">
             <span>💬</span>
             <div>
-              <strong>Free Strategy Call Included</strong>
-              <p>Before we start your project</p>
+              <strong>Strategy Call Included</strong>
+              <p>We understand your offer before production</p>
             </div>
           </div>
 
           <div className="pricing-trust-chip">
             <span>⚡</span>
             <div>
-              <strong>48-Hour Onboarding</strong>
-              <p>Fast setup after confirmation</p>
+              <strong>Fast Onboarding</strong>
+              <p>Quick setup after project confirmation</p>
             </div>
           </div>
         </div>
