@@ -897,3 +897,8 @@
     font-size: 0.95rem;
   }
 }
+.contact-info-item {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}

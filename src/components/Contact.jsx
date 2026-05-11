@@ -12,8 +12,18 @@ const initialFormState = {
 };
 
 const contactItems = [
-  { label: "Email", value: "adveronmedia@gmail.com", icon: "email" },
-  { label: "Phone", value: "+91 6306294210", icon: "phone" },
+  {
+    label: "Email",
+    value: "adveronmedia@gmail.com",
+    icon: "email",
+    href: "mailto:adveronmedia@gmail.com",
+  },
+  {
+    label: "Phone",
+    value: "+91 6306294210",
+    icon: "phone",
+    href: "tel:+916306294210",
+  },
 ];
 
 const services = [
@@ -502,11 +512,12 @@ export default function Contact() {
         {/* ── Block 3 — Contact Info Strip ── */}
         <div className="contact-info-strip">
           {contactItems.map((item, index) => (
-            <div
-              className="contact-info-item reveal"
-              key={item.label}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
+            <a
+  href={item.href}
+  className="contact-info-item reveal"
+  key={item.label}
+  style={{ transitionDelay: `${index * 100}ms` }}
+>
               <div className="contact-info-icon-wrap">
                 <ContactIcon type={item.icon} />
               </div>
@@ -514,7 +525,7 @@ export default function Contact() {
                 <span>{item.label}</span>
                 <p>{item.value}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
