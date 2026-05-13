@@ -688,7 +688,9 @@
 .contact-info-strip {
   display: flex;
   justify-content: center;
-  width: min(560px, 100%);
+  align-items: center;
+
+  width: min(320px, 100%);
   margin: 48px auto 0;
   border: 1px solid var(--clr-border);
   border-radius: 20px;

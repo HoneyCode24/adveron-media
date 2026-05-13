@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./Footer.css";
-
+import logo from "../assets/logo.png"
 const servicesLinks = [
   { label: "Meta Ads", tab: "meta-ads" },
   { label: "Website Development", tab: "web-dev" },
@@ -159,7 +159,8 @@ export default function Footer() {
             style={{ transitionDelay: "0ms" }}
           >
             <a href="#" className="footer-brand" aria-label="Adveron Media home">
-              <AMLogo className="footer-brand-mark" />
+              
+              <img src={logo} alt="" className="footer-brand-mark"/>
               <span>
                 Adveron <strong>Media</strong>
               </span>
@@ -252,7 +253,7 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="footer-contact-item">
+              {/* <div className="footer-contact-item">
                 <ContactIcon type="phone" />
                 <div>
                   <span>Phone</span>
@@ -260,7 +261,7 @@ export default function Footer() {
                     +91 6306294210
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <a
@@ -280,7 +281,7 @@ export default function Footer() {
         <div className="footer-seal-line" />
 
         <div className="footer-seal">
-          <AMLogo className="footer-seal-mark" />
+          <img src={logo} alt="" className="footer-seal-mark"/>
           <span>Adveron Media</span>
         </div>
       </div>
