@@ -4,43 +4,46 @@ import v1 from "../assets/Mobile Upload (58) (1).mp4";
 import v2 from "../assets/Mobile Upload (59) (1).mp4";
 import v3 from "../assets/Mobile Upload (56) (1).mp4";
 import v4 from "../assets/Mobile Upload (65) (1).mp4";
+import m2 from "../assets/59.PNG"
+import m3 from "../assets/56.PNG"
+import m4 from "../assets/65.PNG"
 
 const VIDEOS = [
   {
     id: 1,
     src: v1,
-    type: "video",
-    tag: "Med Spa",
+    // poster: m1,
+    tag: "Skincare",
     label: "Treatment Hook",
     desc: "30s · Meta Feed",
-    stat: "3.2× ROAS",
+
   },
   {
     id: 2,
     src: v2,
-    type: "video",
+    poster: m2,
     tag: "Skincare",
-    label: "Before / After",
+    label: "UGC Creative",
     desc: "20s · Reels",
-    stat: "4.1× ROAS",
+
   },
   {
     id: 3,
     src: v3,
-    type: "video",
+    poster: m3,
     tag: "Beauty",
     label: "Brand Narrative",
     desc: "25s · TikTok Feed",
-    stat: "2.8× ROAS",
+
   },
   {
     id: 4,
     src: v4,
-    type: "video",
-    tag: "Wellness",
+    poster: m4,
+    tag: "Beauty",
     label: "Lifestyle UGC",
     desc: "20s · Meta & TikTok",
-    stat: "5.0× ROAS",
+
   },
 ];
 
@@ -66,27 +69,14 @@ const CloseIcon = () => (
 // ─── POSTER THUMB (paused, shows first frame as poster) ──────────────────────
 // We load the video but keep it paused — the browser renders the first frame.
 // No autoplay, no loop. The card just shows a frozen thumbnail.
-const VideoThumb = ({ video }) => {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    // Seek to 0.1s so the first real frame is visible (avoids black flash)
-    el.currentTime = 0.1;
-  }, []);
-
-  return (
-    <video
-      ref={ref}
-      src={video.src}
-      muted
-      playsInline
-      preload="metadata"
-      aria-label={video.label}
-    />
-  );
-};
+const VideoThumb = ({ video }) => (
+  <img
+    src={video.poster}
+    alt={video.label}
+    className="vs-thumb-image"
+    loading="lazy"
+  />
+);
 
 // ─── MODAL ───────────────────────────────────────────────────────────────────
 const VideoModal = ({ video, onClose }) => {
@@ -120,7 +110,7 @@ const VideoModal = ({ video, onClose }) => {
             <p className="vs-modal-label">{video.label}</p>
             <p className="vs-modal-desc">{video.desc}</p>
           </div>
-          <div className="vs-modal-stat">{video.stat}</div>
+          
         </div>
       </div>
     </div>
@@ -161,7 +151,7 @@ const VideoCard = ({ video, onPlay, size }) => (
         <p className="vs-card-label">{video.label}</p>
         <p className="vs-card-desc">{video.desc}</p>
       </div>
-      <div className="vs-card-stat">{video.stat}</div>
+      
     </div>
   </div>
 );
