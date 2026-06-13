@@ -147,9 +147,9 @@
 
 .footer-heading-line {
   display: block;
-  width: 2px;
-  height: 24px;
-  margin: 13px 0 22px;
+  width: 24px;
+  height: 1px;
+  margin: 8px 0 22px;
   border-radius: 999px;
   background: var(--clr-blue);
   box-shadow: 0 0 16px rgba(37, 99, 235, 0.45);

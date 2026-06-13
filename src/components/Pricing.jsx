@@ -27,7 +27,7 @@ const pricingData = {
       {
         name: "Growth Creative System",
         dot: "blue",
-        price: "$797",
+        price: "$697",
         billing: "/month",
         tagline: "Consistent creative that scales your brand every month",
         popular: true,
@@ -46,7 +46,7 @@ const pricingData = {
       {
         name: "Creative Scale System",
         dot: "amber",
-        price: "$1,497",
+        price: "$1,297",
         billing: "/month",
         tagline: "Your dedicated creative partner for aggressive scaling",
         popular: false,

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./Hero.css";
-import logo from "../assets/logo.png";
 import herovideo from "..//assets/Mobile Upload (56) (1).mp4";
-
+import logo from "../assets/logo.png"
 /* ── Inline SVG icons ── */
 const IconChart = () => (
   <svg viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,6 +85,7 @@ export default function Hero() {
             >
               {/* Logo */}
               <a href="#" className="adv-logo">
+                <img src={logo} alt="" className="adv-logo-img"/>
                 <span className="adv-logo-text">
                   Adveron <span className="adv-logo-accent">Media</span>
                 </span>

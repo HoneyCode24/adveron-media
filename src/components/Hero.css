@@ -128,7 +128,9 @@ font-family: 'JetBrains Mono', monospace;
   gap: 10px;
   text-decoration: none;
 }
-
+.adv-logo-img{
+  height: 3rem;
+}
 .adv-logo-mark {
   width: 28px; height: 28px;
   border-radius: 6px;
