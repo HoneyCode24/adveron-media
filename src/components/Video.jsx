@@ -4,6 +4,7 @@ import v1 from "../assets/Mobile Upload (58) (1).mp4";
 import v2 from "../assets/Mobile Upload (59) (1).mp4";
 import v3 from "../assets/Mobile Upload (56) (1).mp4";
 import v4 from "../assets/Mobile Upload (65) (1).mp4";
+import m1 from "../assets/58.PNG"
 import m2 from "../assets/59.PNG"
 import m3 from "../assets/56.PNG"
 import m4 from "../assets/65.PNG"
@@ -12,7 +13,7 @@ const VIDEOS = [
   {
     id: 1,
     src: v1,
-    // poster: m1,
+    poster: m1,
     tag: "Skincare",
     label: "Treatment Hook",
     desc: "30s · Meta Feed",
