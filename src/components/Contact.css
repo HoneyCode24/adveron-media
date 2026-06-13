@@ -100,7 +100,7 @@
 
 .cta-content h2 {
   margin: 22px 0 0;
-  font-family: "Syne", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: clamp(2.8rem, 6vw, 5rem);
   font-weight: 800;
   line-height: 0.98;
@@ -272,7 +272,7 @@
 }
 
 .form-card-title {
-  font-family: "Syne", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: clamp(1.3rem, 2.5vw, 1.65rem);
   font-weight: 800;
   letter-spacing: -0.035em;
@@ -524,7 +524,7 @@
   background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
   color: #ffffff;
   cursor: pointer;
-  font-family: "Syne", sans-serif;
+font-family: 'DM Sans', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -640,7 +640,7 @@
 }
 
 .success-state h3 {
-  font-family: "Syne", sans-serif;
+font-family: 'DM Sans', sans-serif;
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 800;
   letter-spacing: -0.05em;
@@ -819,7 +819,7 @@
 
 .contact-info-item p {
   margin: 0;
-  font-family: "Syne", sans-serif;
+font-family: 'DM Sans', sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: -0.02em;

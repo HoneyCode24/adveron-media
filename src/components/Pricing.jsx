@@ -9,192 +9,195 @@ const pricingData = {
       {
         name: "Creative Test Pack",
         dot: "grey",
-        price: "$250",
+        price: "$297",
         billing: "one-time",
-        tagline: "Test high-converting video ads for your brand",
+        tagline: "See what works for your brand before committing",
         popular: false,
         cta: "Start Testing",
         features: [
-          { text: "3 professional short-form video ads", included: true },
-          { text: "3 different ad styles", included: true },
-          { text: "Attention-grabbing opening hooks", included: true },
+          { text: "6 short-form video ads (15–30 sec)", included: true },
+          { text: "6 different hook styles & ad concepts", included: true },
           { text: "Versions with & without captions", included: true },
           { text: "Performance-driven scriptwriting", included: true },
           { text: "Competitor & market research", included: true },
-          { text: "High-volume monthly production", included: false },
-          { text: "Dedicated creative strategy", included: false },
+          { text: "Revisions", included: false },
+          { text: "Monthly creative retainer", included: false },
         ],
       },
       {
         name: "Growth Creative System",
         dot: "blue",
-        price: "$997",
+        price: "$797",
         billing: "/month",
-        tagline: "Monthly video ads designed to grow your brand",
+        tagline: "Consistent creative that scales your brand every month",
         popular: true,
         cta: "Choose Growth",
         features: [
-          { text: "20 professional video ads every month", included: true },
+          { text: "15 video ads per month", included: true },
           { text: "Competitor & market research", included: true },
-          { text: "Different ad concepts and styles", included: true },
+          { text: "8-10 different hook angles tested", included: true },
           { text: "Versions with & without captions", included: true },
           { text: "Conversion-focused ad scripts", included: true },
-          { text: "Different attention-grabbing hooks", included: true },
-          { text: "Fresh ad updates every month", included: true },
-          { text: "Custom workflow integration", included: false },
+          { text: "Monthly strategy call (30 min)", included: true },
+          { text: "Fresh ad batch every month", included: true },
+          { text: "2 rounds of revisions", included: true },
         ],
       },
       {
         name: "Creative Scale System",
         dot: "amber",
-        price: "Custom",
-        billing: "pricing",
-        tagline: "Ongoing creative infrastructure for scaling brands",
+        price: "$1,497",
+        billing: "/month",
+        tagline: "Your dedicated creative partner for aggressive scaling",
         popular: false,
-        cta: "Build Scale Plan",
+        cta: "Start Scaling",
         features: [
-          { text: "Ongoing high-volume creative production", included: true },
-          { text: "Continuous creative testing", included: true },
-          { text: "Dedicated creative strategy", included: true },
-          { text: "Multi-format creative assets", included: true },
-          { text: "Creative refresh workflow", included: true },
-          { text: "Priority production support", included: true },
-          { text: "Flexible scaling capacity", included: true },
-          { text: "Custom workflow integration", included: true },
+          { text: "30 video ads per month", included: true },
+          { text: "Full competitor analysis monthly", included: true },
+          { text: "Multi-format delivery (Reels, TikTok, YT Shorts)", included: true },
+          { text: "Priority 48-hour turnaround", included: true },
+          { text: "Weekly strategy calls", included: true },
+          { text: "A/B test reporting — what's working & why", included: true },
+          { text: "Unlimited revisions", included: true },
+          { text: "Custom workflow integration (Slack/Notion)", included: true },
         ],
       },
     ],
   },
 
-  "web-dev": {
-    label: "Website Development",
-    type: "cards",
-    plans: [
-      {
-        name: "Launch Page",
-        dot: "grey",
-        price: "$499",
-        billing: "one-time",
-        tagline: "For brands that need a premium landing page fast",
-        popular: false,
-        cta: "Launch My Page",
-        features: [
-          { text: "1 high-converting landing page", included: true },
-          { text: "Mobile-first responsive design", included: true },
-          { text: "Premium modern layout", included: true },
-          { text: "Call-to-action sections", included: true },
-          { text: "Contact / lead form setup", included: true },
-          { text: "Basic SEO structure", included: true },
-          { text: "Speed optimization", included: true },
-          { text: "1 revision round", included: true },
-        ],
-      },
-      {
-        name: "Business Website",
-        dot: "blue",
-        price: "$997",
-        billing: "one-time",
-        tagline: "A premium business website built for trust and leads",
-        popular: true,
-        cta: "Build My Website",
-        features: [
-          { text: "4-page premium website", included: true },
-          {
-            text: "Homepage, services, about, contact + extra page",
-            included: true,
-          },
-          { text: "Website text designed to generate leads", included: true },
-          { text: "Mobile-first design", included: true },
-          { text: "Contact form integration", included: true },
-          { text: "Basic SEO setup", included: true },
-          { text: "Speed optimization", included: true },
-          { text: "2 revision rounds", included: true },
-        ],
-      },
+ "web-dev": {
+  label: "Website Development",
+  type: "cards",
+  plans: [
+    {
+      name: "Launch Page",
+      dot: "grey",
+      price: "$697",
+      billing: "one-time",
+      tagline: "A high-converting landing page that turns visitors into leads — live in 7 days",
+      popular: false,
+      cta: "Build My Landing Page",
+      features: [
+        { text: "1 premium conversion-focused landing page", included: true },
+        { text: "Persuasive copywriting & headline strategy", included: true },
+        { text: "Mobile-first, pixel-perfect design", included: true },
+        { text: "Lead capture form + CTA sections", included: true },
+        { text: "Google Analytics + Meta Pixel setup", included: true },
+        { text: "Core SEO structure (titles, meta, schema)", included: true },
+        { text: "Page speed optimized (90+ score target)", included: true },
+        { text: "2 revision rounds", included: true },
+        { text: "Delivered in 7 days", included: true },
+        { text: "Multi-page site", included: false },
+      ],
+    },
+    {
+      name: "Business Growth Site",
+      dot: "blue",
+      price: "$1,497",
+      billing: "one-time",
+      tagline: "A full premium website built to establish authority and generate leads on autopilot",
+      popular: true,
+      cta: "Build My Website",
+      features: [
+        { text: "5-page premium website (Home, Services, About, Contact + 1 custom)", included: true },
+        { text: "Full conversion copywriting across all pages", included: true },
+        { text: "Brand-aligned premium design system", included: true },
+        { text: "Lead forms + booking/calendar integration", included: true },
+        { text: "Google Analytics + Meta Pixel + GTM setup", included: true },
+        { text: "Full on-page SEO setup", included: true },
+        { text: "Page speed & Core Web Vitals optimized", included: true },
+        { text: "3 revision rounds", included: true },
+        { text: "Delivered in 14 days", included: true },
+        { text: "30-day post-launch support", included: true },
+      ],
+    },
+    {
+      name: "E-Commerce & Custom Builds",
+      dot: "amber",
+      price: "$2,997+",
+      billing: "starting at",
+      tagline: "For Shopify stores, advanced funnels, and custom systems built to scale revenue",
+      popular: false,
+      cta: "Discuss My Project",
+      features: [
+        { text: "Custom Shopify or headless build", included: true },
+        { text: "High-converting product & collection pages", included: true },
+        { text: "Custom sales funnel development", included: true },
+        { text: "Payment gateway & app integrations", included: true },
+        { text: "Abandoned cart & upsell flows", included: true },
+        { text: "Advanced SEO & structured data", included: true },
+        { text: "Performance & conversion rate optimization", included: true },
+        { text: "Dedicated project manager", included: true },
+        { text: "60-day post-launch support", included: true },
+        { text: "Custom workflow & handoff documentation", included: true },
+      ],
+    },
+  ],
+},
 
-      {
-        name: "E-Commerce / Custom Build",
-        dot: "amber",
-        price: "Custom",
-        billing: "pricing",
-        tagline: "For Shopify stores, advanced funnels, and custom systems",
-        popular: false,
-        cta: "Discuss Custom Build",
-        features: [
-          { text: "Custom Shopify development", included: true },
-          { text: "Advanced integrations", included: true },
-          { text: "High-converting product pages", included: true },
-          { text: "Custom landing funnels", included: true },
-          { text: "Scalable infrastructure", included: true },
-          { text: "Tailored development workflow", included: true },
-          { text: "Built to turn visitors into customers", included: true },
-          { text: "Custom launch support", included: true },
-        ],
-      },
-    ],
-  },
-
-  "social-media": {
-    label: "Social Growth",
-    type: "cards",
-    plans: [
-      {
-        name: "Starter Content Plan",
-        dot: "grey",
-        price: "$497",
-        billing: "/month",
-        tagline:
-          "Monthly social media content for growing brands",
-        popular: false,
-        cta: "Start Content",
-        features: [
-          { text: "12 social media videos per month", included: true },
-          { text: "Captions + posting copy", included: true },
-          { text: "Basic content calendar", included: true },
-          { text: "Optimized for Instagram & TikTok", included: true },
-          { text: "Basic monthly analytics", included: true },
-          { text: "Professional video-style content", included: false },
-          { text: "Advanced trend planning", included: false },
-        ],
-      },
-      {
-        name: "Organic Growth System",
-        dot: "blue",
-        price: "$997",
-        billing: "/month",
-        tagline: "A stronger content engine for visibility, trust, and demand",
-        popular: true,
-        cta: "Choose Growth",
-        features: [
-          { text: "20 short-form content pieces/month", included: true },
-          { text: "AI UGC content support", included: true },
-          { text: "Hooks + scripting direction", included: true },
-          { text: "Reels/TikTok optimization", included: true },
-          { text: "Trending content planning", included: true },
-          { text: "Monthly performance review", included: true },
-          { text: "Multi-platform content strategy", included: true },
-        ],
-      },
-      {
-        name: "Brand Scale System",
-        dot: "amber",
-        price: "$1,997+",
-        billing: "/month",
-        tagline: "High-volume content infrastructure for brands ready to scale",
-        popular: false,
-        cta: "Scale Content",
-        features: [
-          { text: "Custom high-volume content production", included: true },
-          { text: "Advanced organic strategy", included: true },
-          { text: "AI UGC systems", included: true },
-          { text: "Multi-platform scaling", included: true },
-          { text: "Premium editing workflow", included: true },
-          { text: "Launch / refresh cycles", included: true },
-          { text: "Priority production support", included: true },
-        ],
-      },
-    ],
-  },
+"social-media": {
+  label: "Social Growth",
+  type: "cards",
+  plans: [
+    {
+      name: "Starter Content Plan",
+      dot: "grey",
+      price: "$497",
+      billing: "/month",
+      tagline: "Done-for-you short-form content to grow your presence every month",
+      popular: false,
+      cta: "Start Growing",
+      features: [
+        { text: "12 short-form videos/month (Reels & TikTok, 15–45 sec)", included: true },
+        { text: "Hook-driven scripting for each video", included: true },
+        { text: "Captions + hashtag strategy per post", included: true },
+        { text: "Content calendar delivered by Day 3 of each month", included: true },
+        { text: "Optimized for Instagram & TikTok algorithms", included: true },
+        { text: "Monthly performance snapshot report", included: true },
+        { text: "2 revision rounds per batch", included: true },
+        { text: "Strategy & trend planning", included: false },
+      ],
+    },
+    {
+      name: "Organic Growth System",
+      dot: "blue",
+      price: "$997",
+      billing: "/month",
+      tagline: "A full content engine built for visibility, trust, and consistent inbound demand",
+      popular: true,
+      cta: "Choose Growth",
+      features: [
+        { text: "20 short-form videos/month (Reels, TikTok, YouTube Shorts)", included: true },
+        { text: "Competitor & trend research every month", included: true },
+        { text: "Hook writing + full scripting for every video", included: true },
+        { text: "AI UGC-style content integration", included: true },
+        { text: "Multi-platform formatting & optimization", included: true },
+        { text: "Monthly strategy call (30 min)", included: true },
+        { text: "Detailed monthly performance report with recommendations", included: true },
+        { text: "3 revision rounds per batch", included: true },
+      ],
+    },
+    {
+      name: "Brand Scale System",
+      dot: "amber",
+      price: "$1,997",
+      billing: "/month",
+      tagline: "High-volume content infrastructure for brands scaling aggressively",
+      popular: false,
+      cta: "Scale My Brand",
+      features: [
+        { text: "40 short-form videos/month across all platforms", included: true },
+        { text: "Full content strategy + monthly creative direction", included: true },
+        { text: "AI UGC system — volume creative at scale", included: true },
+        { text: "Weekly content drops (consistent pipeline)", included: true },
+        { text: "A/B hook testing — what's working & why", included: true },
+        { text: "Weekly strategy call + dedicated point of contact", included: true },
+        { text: "Advanced performance reporting + content audit", included: true },
+        { text: "Priority production & 48-hour revision turnaround", included: true },
+      ],
+    },
+  ],
+},
 
   "full-package": {
     label: "Brand Launch System",
@@ -207,8 +210,8 @@ const bundleData = {
     label: "Brand Launch System",
     price: "$1,497",
     billing: "one-time",
-    separateCost: "Launch-ready",
-    savings: "System bundle",
+    separateCost: "$2,000+ separately",
+    savings: "Save $500+",
     cta: "Launch My Brand System",
     chips: [
       "20 AI UGC Creatives",
@@ -216,22 +219,21 @@ const bundleData = {
       "8 Organic Content Pieces",
     ],
     features: [
-      "20 performance-focused AI UGC creatives",
-      "Premium modern conversion landing page",
+      "20 performance-focused AI UGC video ads",
+      "Premium conversion landing page (worth $697)",
       "8 short-form organic content pieces",
       "Competitor & market research",
       "Brand positioning guidance",
-      "30 bonus static ad creatives",
       "Strategy setup call",
       "Priority production workflow",
     ],
   },
   growth: {
     label: "Brand Growth Infrastructure",
-    price: "$2,997",
+    price: "$2,497",
     billing: "/month",
-    separateCost: "Scaling system",
-    savings: "Monthly growth infrastructure",
+    separateCost: "$2,800+/mo separately",
+    savings: "Save $300+/mo",
     cta: "Scale My Brand Infrastructure",
     chips: [
       "30–50 AI UGC / Month",
@@ -245,7 +247,6 @@ const bundleData = {
       "Audience targeting insights",
       "Offer positioning refinement",
       "20 short-form organic content pieces / month",
-      "50 bonus static ad creatives",
       "Conversion website support",
     ],
   },
@@ -268,16 +269,19 @@ const bundleData = {
       "Creative performance analysis",
       "40+ short-form organic content pieces / month",
       "Advanced competitor & market intelligence",
-      "100+ bonus static ad creatives",
       "Flexible scaling capacity",
     ],
   },
 };
 
+
 const tabs = Object.entries(pricingData).map(([id, item]) => ({
   id,
   label: item.label,
 }));
+
+// Show custom inquiry strip only for Video Ads tab
+const CUSTOM_INQUIRY_TABS = ["meta-ads"];
 
 function CheckIcon() {
   return (
@@ -345,6 +349,25 @@ function PricingCard({ plan, index, onSelect }) {
   );
 }
 
+function CustomInquiryStrip({ onSelect }) {
+  return (
+    <div className="pricing-custom-strip">
+      <div className="pricing-custom-strip__left">
+        <span className="pricing-custom-strip__label">Need more than 30 ads/month?</span>
+        <p className="pricing-custom-strip__desc">
+          For high-volume brands, agencies, or custom requirements — we'll build a plan around your exact needs.
+        </p>
+      </div>
+      <button
+        className="pricing-custom-strip__cta"
+        onClick={onSelect}
+      >
+        Book a Strategy Call →
+      </button>
+    </div>
+  );
+}
+
 function FullPackage() {
   const [selectedBundle, setSelectedBundle] = useState("launch");
   const [bundleEntering, setBundleEntering] = useState(true);
@@ -363,7 +386,7 @@ function FullPackage() {
   };
 
   return (
-    <div className="pricing-full">
+    <div className="pricing-full" id="pricing">
       <article className="pricing-full__hero">
         <div className="pricing-full__top">
           <div>
@@ -404,7 +427,7 @@ function FullPackage() {
           </div>
 
           <div className="pricing-full__included">
-            <p>What’s Included</p>
+            <p>What's Included</p>
 
             <div className="pricing-full__chips">
               {currentBundle.chips.map((chip) => (
@@ -511,6 +534,7 @@ export default function Pricing() {
     "social-media": "Social Media Management",
     "full-package": "Full Package",
   };
+
   const handlePricingCTA = (service, packageName) => {
     window.dispatchEvent(
       new CustomEvent("selectContactService", {
@@ -572,18 +596,29 @@ export default function Pricing() {
           }`}
         >
           {activePricing.type === "cards" ? (
-            <div className="pricing-cards">
-              {activePricing.plans.map((plan, index) => (
-                <PricingCard
-                  key={`${activeTab}-${plan.name}`}
-                  plan={plan}
-                  index={index}
+            <>
+              <div className="pricing-cards">
+                {activePricing.plans.map((plan, index) => (
+                  <PricingCard
+                    key={`${activeTab}-${plan.name}`}
+                    plan={plan}
+                    index={index}
+                    onSelect={() =>
+                      handlePricingCTA(serviceMap[activeTab], plan.name)
+                    }
+                  />
+                ))}
+              </div>
+
+              {/* Custom inquiry strip — only on Video Ads tab */}
+              {CUSTOM_INQUIRY_TABS.includes(activeTab) && (
+                <CustomInquiryStrip
                   onSelect={() =>
-                    handlePricingCTA(serviceMap[activeTab], plan.name)
+                    handlePricingCTA(serviceMap[activeTab], "Custom Plan")
                   }
                 />
-              ))}
-            </div>
+              )}
+            </>
           ) : (
             <FullPackage />
           )}

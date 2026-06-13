@@ -61,7 +61,7 @@
 .about-content h2,
 .why-header h2 {
   margin: 20px 0 0;
-  font-family: "Syne", sans-serif;
+font-family: 'DM Sans', sans-serif;
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 800;
   line-height: 1.05;
@@ -111,7 +111,7 @@
 }
 
 .about-chip strong {
-  font-family: "Syne", sans-serif;
+font-family: 'DM Sans', sans-serif;
   font-size: 0.98rem;
   font-weight: 800;
   color: var(--clr-text);
@@ -261,7 +261,7 @@
 /* Front card tweaks */
 .visual-card-front h3 {
   margin: 10px 0 10px;
-  font-family: "Syne", sans-serif;
+font-family: 'DM Sans', sans-serif;
   font-size: clamp(1.9rem, 3.5vw, 2.6rem); /* was 4.4rem — too big */
   font-weight: 800;
   line-height: 1.05;

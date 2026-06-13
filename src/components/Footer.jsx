@@ -172,19 +172,7 @@ export default function Footer() {
               management.
             </p>
 
-            <div className="footer-social-row">
-              <a href="#" aria-label="Instagram">
-                <SocialIcon type="instagram" />
-              </a>
-
-              <a href="#" aria-label="Facebook">
-                <SocialIcon type="facebook" />
-              </a>
-
-              <a href="#" aria-label="LinkedIn">
-                <SocialIcon type="linkedin" />
-              </a>
-            </div>
+          
 
 
           </div>

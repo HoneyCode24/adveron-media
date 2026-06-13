@@ -1,0 +1,589 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   Video.css  —  AI UGC Agency · Featured Section
+───────────────────────────────────────────────────────────────────────────── */
+
+/* ── Section shell ─────────────────────────────────────────────────────────── */
+.vs-section {
+  padding: 96px 0 112px;
+  background: var(--clr-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.vs-section::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.09) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ── Container ──────────────────────────────────────────────────────────────── */
+.vs-container {
+  margin: 0 auto;
+  padding: 0 120px;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────────── */
+.vs-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.vs-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vs-header-right {
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Eyebrow */
+.vs-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-blue-lt);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+}
+
+.vs-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--clr-blue-lt);
+  flex-shrink: 0;
+  animation: vs-blink 2.4s ease-in-out infinite;
+}
+
+@keyframes vs-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.25; }
+}
+  /* --clr-blue-deep:   #1b3a6b;
+  --clr-blue:        #2563eb;
+  --clr-blue-lt:     #3b82f6;
+  --clr-blue-glow:   rgba(37, 99, 235, 0.35) */
+/* Heading */
+.vs-heading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--clr-white);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.vs-heading b {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: var(--clr-blue-lt);
+  font-size: clamp(32px, 4.5vw, 68px);
+}
+
+/* Sub-copy */
+.vs-sub {
+  font-size: 15px;
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* CTA button */
+.vs-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--clr-blue-lt);
+  text-decoration: none;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  background: rgba(37, 99, 235, 0.07);
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+  letter-spacing: 0.02em;
+}
+
+.vs-cta:hover {
+  background: rgba(37, 99, 235, 0.15);
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.vs-cta svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.vs-cta:hover svg {
+  transform: translateX(3px);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   TICKER
+   — no margin-bottom here; the grid's margin-top handles the gap
+   — border-top connects it visually to the header, border-bottom to the grid
+══════════════════════════════════════════════════════════════════════════════ */
+.vs-ticker {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid rgba(59, 130, 246, 0.14);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.14);
+  margin-top: 60px ;
+  padding: 12px 0;
+  /* sits flush — no extra bottom gap, grid provides its own top spacing */
+  mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.vs-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: vs-ticker 30s linear infinite;
+}
+
+@keyframes vs-ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.vs-ticker:hover .vs-ticker-track {
+  animation-play-state: paused;
+}
+
+.vs-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  white-space: nowrap;
+  padding: 0 32px;
+}
+
+.vs-ticker-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--clr-blue-lt);
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+/* ── Grid layout ────────────────────────────────────────────────────────────── */
+.vs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  /* gap between ticker and grid */
+  margin-top: 32px;
+}
+
+/* ── Card base ──────────────────────────────────────────────────────────────── */
+.vs-card {
+  position: relative;
+  border-radius: 16px;
+  border: 1px solid var(--clr-border);
+  background: var(--clr-surface);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.22s ease,
+              transform    0.22s ease,
+              box-shadow   0.22s ease;
+}
+
+.vs-card:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55),
+              0 0 0 1px rgba(59, 130, 246, 0.1),
+              0 0 40px rgba(37, 99, 235, 0.1);
+}
+
+.vs-card--hero,
+.vs-card--sm {
+  aspect-ratio: 9 / 16;
+}
+
+/* ── Scan-line shimmer ─────────────────────────────────────────────────────── */
+.vs-card-scanline {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(255,255,255,0.018) 3px,
+    rgba(255,255,255,0.018) 4px
+  );
+  transition: opacity 0.3s ease;
+}
+
+.vs-card:hover .vs-card-scanline { opacity: 1; }
+
+/* ── Thumb ──────────────────────────────────────────────────────────────────── */
+.vs-card-thumb {
+  position: absolute;
+  inset: 0;
+  background: #0a0e18;
+}
+
+.vs-card-thumb video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Paused video — browser renders whichever frame currentTime is set to */
+  display: block;
+}
+
+/* Bottom gradient for text legibility */
+.vs-card-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(6, 9, 15, 0.96) 0%,
+    rgba(6, 9, 15, 0.35) 40%,
+    transparent          100%
+  );
+  pointer-events: none;
+}
+
+/* ── Top chip ───────────────────────────────────────────────────────────────── */
+.vs-card-top {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 3;
+}
+
+.vs-chip {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-blue-lt);
+  background: rgba(6, 9, 15, 0.75);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 4px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+}
+
+/* ── Play button overlay ────────────────────────────────────────────────────── */
+/*
+  Always visible at rest (opacity 0.7) so the user knows cards are clickable.
+  Grows and brightens on hover.
+*/
+.vs-card-play-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* always show — cards are paused thumbnails, not playing video */
+  opacity: 0.75;
+  transition: opacity 0.22s ease;
+  pointer-events: none;
+}
+
+.vs-card:hover .vs-card-play-overlay {
+  opacity: 1;
+}
+
+.vs-play-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--clr-blue);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vs-play-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+  margin-left: 3px;
+}
+
+.vs-card:hover .vs-play-btn {
+  transform: scale(1.12);
+  box-shadow: 0 0 0 14px rgba(37, 99, 235, 0.15),
+              0 0 36px rgba(37, 99, 235, 0.45);
+}
+
+/* ── Bottom info ────────────────────────────────────────────────────────────── */
+.vs-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 14px 16px 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.vs-card-label {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--clr-white);
+  margin: 0 0 3px;
+  line-height: 1.2;
+}
+
+.vs-card-desc {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  margin: 0;
+}
+
+.vs-card-stat {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.22);
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   MODAL
+══════════════════════════════════════════════════════════════════════════════ */
+
+.vs-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(6, 9, 15, 0.88);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: vs-fade-in 0.2s ease forwards;
+}
+
+@keyframes vs-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.vs-modal-box {
+  background: var(--clr-surface);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.7),
+              0 0 60px rgba(37,99,235,0.12);
+  animation: vs-scale-in 0.26s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes vs-scale-in {
+  from { transform: scale(0.94); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.vs-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(6, 9, 15, 0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--clr-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.vs-modal-close svg {
+  width: 14px;
+  height: 14px;
+}
+
+.vs-modal-close:hover {
+  border-color: rgba(59, 130, 246, 0.4);
+  color: var(--clr-white);
+}
+
+.vs-modal-video-wrap {
+  aspect-ratio: 9 / 16;
+  background: #000;
+  position: relative;
+}
+
+.vs-modal-video-wrap video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vs-modal-footer {
+  padding: 16px 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.vs-modal-tag {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-blue-lt);
+  margin-bottom: 4px;
+}
+
+.vs-modal-label {
+  font-family: var(--font-display, 'Space Grotesk', sans-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--clr-white);
+  margin: 0 0 3px;
+}
+
+.vs-modal-desc {
+  font-size: 11px;
+  color: var(--clr-text-muted);
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.vs-modal-stat {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.22);
+  padding: 6px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1100px) {
+  .vs-container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .vs-section {
+    padding: 72px 0 88px;
+  }
+
+  .vs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vs-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  .vs-header-right {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .vs-section {
+    padding: 56px 0 72px;
+  }
+
+  .vs-container {
+    padding: 0 16px;
+  }
+
+  .vs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .vs-card-label {
+    font-size: 12px;
+  }
+
+  .vs-card-stat {
+    display: none;
+  }
+
+  .vs-heading {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 380px) {
+  .vs-grid {
+    grid-template-columns: 1fr;
+  }
+}
