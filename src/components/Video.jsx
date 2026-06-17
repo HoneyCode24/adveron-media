@@ -32,7 +32,7 @@ const VIDEOS = [
     id: 3,
     src: v3,
     poster: m3,
-    tag: "Beauty",
+    tag: "Supplement",
     label: "Brand Narrative",
     desc: "25s · TikTok Feed",
 
@@ -41,7 +41,7 @@ const VIDEOS = [
     id: 4,
     src: v4,
     poster: m4,
-    tag: "Beauty",
+    tag: "Supplement",
     label: "Lifestyle UGC",
     desc: "20s · Meta & TikTok",
 

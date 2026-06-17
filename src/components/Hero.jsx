@@ -209,11 +209,11 @@ export default function Hero() {
                 </div>
                 <div className="adv-stat-card">
                   <span className="adv-stat-chip">Entry Point</span>
-                  <div className="adv-stat-value white">Free</div>
+                  <div className="adv-stat-value white">Starter</div>
                   <div className="adv-stat-label">
-                    2 demo ads
+                    Perfect for testing 
                     <br />
-                    before you commit
+                    new ad angles
                   </div>
                 </div>
               </div>
@@ -258,8 +258,8 @@ export default function Hero() {
         });
       }}
     >
-      Get 2 free demo ads
-      <span className="adv-cta-badge">No commitment</span>
+      Scale Your 
+      <span className="adv-cta-badge">Meta Ads Now</span>
     </a>
 
     <a
